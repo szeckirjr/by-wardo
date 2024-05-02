@@ -23,16 +23,18 @@ export default function ReferenceTag({ reference }: { reference: Reference }) {
         <img
           src={cover}
           alt={title}
-          className=" h-full w-[75px] opacity-20 group-hover:opacity-100 duration-200"
+          className=" h-full w-[120px] opacity-20 group-hover:opacity-100 duration-200"
         />
         <div>
-          <h4 className="text-2xl font-bold opacity-20 group-hover:opacity-100">
+          <h4 className="text-2xl font-bold opacity-0 group-hover:opacity-100">
             {title}
           </h4>
-          <p className="text-lg font-bold opacity-20 group-hover:opacity-100">
+          <p className="text-lg font-bold opacity-0 group-hover:opacity-100">
             {author}
           </p>
-          <i className="hidden group-hover:block">&quot;{excerpt}&quot;</i>
+          <i className="text-md hidden group-hover:block">
+            &quot;{excerpt}&quot;
+          </i>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <div
       className={classNames(
-        "relative flex items-baseline justify-between",
+        "relative flex flex-grow-0 items-baseline justify-between",
         "pt-6 md:pt-8 lg:pt-16 px-6 md:px-8 lg:px-16 pb-8",
         vidaloka.className
       )}

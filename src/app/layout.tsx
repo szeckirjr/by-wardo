@@ -9,8 +9,8 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bah",
-  description: "A blog about nothing and everything",
+  title: "Words",
+  description: "A collection of words I find interesting.",
   authors: {
     url: "https://wardo.dev/",
     name: "Eduardo Szeckir",
@@ -26,15 +26,15 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={classNames(
-          "bg-champagne text-rich-black bg-fuzz bg-blend-multiply",
+          "bg-champagne text-rich-black bg-fuzz min-h-screen relative w-full flex flex-col bg-blend-multiply",
           inter.className
         )}
       >
-        <div className="relative top-0 left-0 w-full h-screen">
-          <Header />
-          <main className="pb-16 px-6 md:px-8 lg:px-16">{children}</main>
-          <Footer />
-        </div>
+        <Header />
+        <main className="flex-grow h-full pb-16 px-6 md:px-8 lg:px-16">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

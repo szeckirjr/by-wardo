@@ -34,23 +34,36 @@ export const words: Record<string, Word> = {
   elated: {
     word: "Elated",
   },
+  juxtaposition: {
+    word: "Juxtaposition",
+  },
+  effervescent: {
+    word: "Effervescent",
+  },
+  ineffable: {
+    word: "Ineffable",
+  },
+  ephemeral: {
+    word: "Ephemeral",
+  },
+  petrichor: {
+    word: "Petrichor",
+  },
 };
 
 const wordsList = Object.keys(words);
 
 export default function Home() {
   const PostList = () => (
-    <div>
-      <div className="flex flex-col-reverse gap-4 mt-6">
-        {wordsList.map((wordId, idx) => (
-          <>
-            <WordCard key={wordId} wordId={wordId} />
-            {idx < wordsList.length - 1 && (
-              <hr className="border-black opacity-10 border-[0.25px]" />
-            )}
-          </>
-        ))}
-      </div>
+    <div className="flex flex-col-reverse gap-4 ">
+      {wordsList.map((wordId, idx) => (
+        <>
+          <WordCard key={wordId} wordId={wordId} />
+          {idx < wordsList.length - 1 && (
+            <hr className="border-black opacity-10 border-[0.25px]" />
+          )}
+        </>
+      ))}
     </div>
   );
 
