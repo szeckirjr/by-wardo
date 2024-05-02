@@ -1,1 +1,0 @@
-export const allPosts = ['sample', '1', '2']
