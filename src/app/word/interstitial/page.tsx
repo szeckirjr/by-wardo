@@ -1,4 +1,6 @@
-import ReferenceTag from "@/components/ReferenceTag";
+"use client";
+import FoundInBook from "@/components/FoundInBook";
+import ReferenceTag, { WebsiteRef } from "@/components/ReferenceTag";
 import Tooltip from "@/components/Tooltip";
 import WordDefinition from "@/components/WordDefinition";
 import { Word } from "@/types";
@@ -34,13 +36,21 @@ export const interstitial: Word = {
 };
 
 export default function Interstitial() {
+  const scrollToContent = () => {
+    const content = document.getElementById("interstitial-content");
+    content?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div>
       <div className="min-h-[90vh] -mt-20 flex items-center relative">
         <WordDefinition word={interstitial} />
-        <RiArrowDownWideLine className="absolute bottom-2 left-0 right-0 w-10 h-10 mx-auto text-black animate-bounce" />
+        <RiArrowDownWideLine
+          onClick={scrollToContent}
+          className="absolute bottom-2 left-0 right-0 w-10 h-10 mx-auto text-black animate-bounce cursor-pointer"
+        />
       </div>
       <div
+        id="interstitial-content"
         className={classNames(
           "text-lg pt-36 sm:text-xl flex flex-col gap-4 sm:gap-6 lg:gap-10"
         )}
@@ -61,12 +71,13 @@ export default function Interstitial() {
           </Tooltip>
           , where a small subset of elements have an outsized effect, also
           applies to language use; the bulk of our communication is done using a
-          small subset of the language.
+          <span className="text-sm sm:text-md font-bold px-4"> small</span>{" "}
+          subset of the language.
         </div>
         <div>
           While English has an estimated 171,146 words currently in use (aside
           from over 47 thousand obsolete words), native speakers typically only
-          know about 15-20 thousand{" "}
+          know about 15 to 20 thousand{" "}
           <Tooltip
             element={
               <>
@@ -80,12 +91,29 @@ export default function Interstitial() {
           </Tooltip>
           . Research has shown, however, that learning just the top 800 most
           frequent lemmas in English will allow you to understand 75% of the
-          language as its spoken in everyday life. To understand dialogue in
-          movies and shows? You&apos;ll need ~3,000 lemmas. To understand any
-          written content (novels, articles, newspapers)? You&apos;ll need
-          ~8,000-9,000 lemmas. Still, the vast majority of the language is never
-          touched in everyday conversation.
+          language as its spoken in everyday life!
+          <div>
+            To understand dialogue in movies and shows? You&apos;ll need ~3,000
+            lemmas.
+          </div>
+          <div>
+            To understand <span className=" italic">any</span> written content
+            (novels, articles, newspapers)? You&apos;ll need ~8,000-9,000
+            lemmas. Still, the vast majority of the language is never touched in
+            everyday conversation.
+            <ReferenceTag
+              number={1}
+              reference={
+                {
+                  title: "How many words do you need to speak a language?",
+                  author: "Beth Sagar-Fenton & Lizzy McNeill, BBC Radio 4",
+                  href: "https://www.bbc.com/news/world-44569277",
+                } as WebsiteRef
+              }
+            />
+          </div>
         </div>
+
         <p>
           &quot;Core words&quot;, as they&apos;re called, make up the vast
           majority of spoken and written content in any language; in English, it
@@ -118,7 +146,7 @@ export default function Interstitial() {
           of speech often lies in the spaces between.
         </p>
         {interstitial.reference && (
-          <ReferenceTag reference={interstitial.reference} />
+          <FoundInBook reference={interstitial.reference} />
         )}
       </div>
     </div>

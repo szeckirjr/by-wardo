@@ -3,7 +3,6 @@
 import { Word } from "@/types";
 import classNames from "classnames";
 import { Vidaloka } from "next/font/google";
-import ReferenceTag from "./ReferenceTag";
 
 const vidaloka = Vidaloka({
   weight: "400",

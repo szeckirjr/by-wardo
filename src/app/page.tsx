@@ -19,36 +19,47 @@ export const words: Record<string, Word> = {
     word: "Interstitial",
     date: "2024-04-29",
   },
-  piqued: {
-    word: "Piqued",
-  },
-  earnestness: {
-    word: "Earnestness",
-  },
-  wryly: {
-    word: "Wryly",
-  },
   serendipity: {
     word: "Serendipity",
+    date: "2024-05-03",
   },
-  elated: {
-    word: "Elated",
+  enmeshed: {
+    word: "Enmeshed",
   },
-  juxtaposition: {
-    word: "Juxtaposition",
+  ascribe: {
+    word: "Ascribe",
   },
-  effervescent: {
-    word: "Effervescent",
+  conjecture: {
+    word: "Conjecture",
   },
-  ineffable: {
-    word: "Ineffable",
+  stultify: {
+    word: "Stultify",
   },
-  ephemeral: {
-    word: "Ephemeral",
-  },
-  petrichor: {
-    word: "Petrichor",
-  },
+
+  // wryly: {
+  //   word: "Wryly",
+  // },
+  // serendipity: {
+  //   word: "Serendipity",
+  // },
+  // elated: {
+  //   word: "Elated",
+  // },
+  // juxtaposition: {
+  //   word: "Juxtaposition",
+  // },
+  // effervescent: {
+  //   word: "Effervescent",
+  // },
+  // ineffable: {
+  //   word: "Ineffable",
+  // },
+  // ephemeral: {
+  //   word: "Ephemeral",
+  // },
+  // petrichor: {
+  //   word: "Petrichor",
+  // },
 };
 
 const wordsList = Object.keys(words);
