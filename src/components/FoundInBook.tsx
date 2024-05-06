@@ -21,7 +21,7 @@ export default function FoundInBook({ reference }: { reference: Reference }) {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={`/by-wardo/${cover}`}
+          src={cover}
           alt={title}
           className=" h-full w-[120px] opacity-20 group-hover:opacity-100 duration-200"
         />
