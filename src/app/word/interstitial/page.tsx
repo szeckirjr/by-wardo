@@ -7,7 +7,7 @@ import { Word } from "@/types";
 import classNames from "classnames";
 import { RiArrowDownWideLine } from "react-icons/ri";
 
-export const interstitial: Word = {
+const interstitial: Word = {
   word: "Interstitial",
   phonetic: "[/in-tuhr-STISH-uhl/]",
   type: "adjective",

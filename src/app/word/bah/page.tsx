@@ -1,7 +1,7 @@
 import WordDefinition from "@/components/WordDefinition";
 import { Word } from "@/types";
 
-export const bah: Word = {
+const bah: Word = {
   word: "Bah",
   phonetic: "[/ba/]",
   type: "interjection",

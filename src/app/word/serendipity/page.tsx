@@ -7,7 +7,7 @@ import { Word } from "@/types";
 import classNames from "classnames";
 import { RiArrowDownWideLine } from "react-icons/ri";
 
-export const serendipity: Word = {
+const serendipity: Word = {
   word: "Serendipity",
   phonetic: "[/ser-uhn-DIP-uh-tee/]",
   type: "noun",

@@ -1,7 +1,7 @@
 import { FaRegClock } from "react-icons/fa6";
 import { Vidaloka } from "next/font/google";
 import classNames from "classnames";
-import { words } from "@/app/page";
+import { words } from "@/words";
 
 const vidaloka = Vidaloka({
   weight: "400",

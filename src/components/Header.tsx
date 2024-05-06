@@ -2,7 +2,6 @@
 import classNames from "classnames";
 import { Vidaloka } from "next/font/google";
 import { usePathname } from "next/navigation";
-import { FlagToggle } from "./FlagToggle";
 
 const vidaloka = Vidaloka({
   weight: "400",
