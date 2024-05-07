@@ -116,7 +116,7 @@ export default function Serendipity() {
           fleeting instances of chance is where we often find the most profound
           lessons, the deepest connections, and the greatest joys. And who
           knows? Your next serendipitous encounter might be just around the
-          corder, waiting to unfold its magic in your life, and encouraging us
+          corner, waiting to unfold its magic in your life, and encouraging us
           all to embrace the unexpected with open arms.
         </p>
         {serendipity.reference && (
