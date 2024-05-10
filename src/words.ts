@@ -12,18 +12,18 @@ export const words: Record<string, Word> = {
     word: "Serendipity",
     date: "2024-05-03",
   },
-  enmeshed: {
-    word: "Enmeshed",
-  },
-  ascribe: {
-    word: "Ascribe",
-  },
-  conjecture: {
-    word: "Conjecture",
-  },
-  stultify: {
-    word: "Stultify",
-  },
+  // enmeshed: {
+  //   word: "Enmeshed",
+  // },
+  // ascribe: {
+  //   word: "Ascribe",
+  // },
+  // conjecture: {
+  //   word: "Conjecture",
+  // },
+  // stultify: {
+  //   word: "Stultify",
+  // },
 
   // wryly: {
   //   word: "Wryly",
