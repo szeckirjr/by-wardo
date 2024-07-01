@@ -20,7 +20,7 @@ export default function Header() {
       )}
       style={{
         maskImage:
-          "linear-gradient(to bottom, black 40%, rgba(0,0,0,0.7973783263305322) 70%, transparent 100%)",
+          "linear-gradient(to bottom, black 35%, rgba(0,0,0,0.7973783263305322) 70%, transparent 100%)",
       }}
     >
       <h1
