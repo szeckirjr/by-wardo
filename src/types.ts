@@ -12,6 +12,7 @@ export interface Word {
   word: string;
   phonetic: string;
   type: string;
-  element: React.ReactNode;
+  element?: React.ReactNode;
+  definitions?: string[] | React.ReactNode[];
   reference?: Reference;
 }

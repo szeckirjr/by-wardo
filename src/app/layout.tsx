@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Vidaloka } from "next/font/google";
 import "./globals.css";
 import classNames from "classnames";
 import Header from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   },
 };
 
+const vidaloka = Vidaloka({
+  weight: "400",
+  subsets: ["latin"],
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -27,17 +32,30 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={classNames(
-          "bg-champagne text-rich-black bg-fuzz min-h-screen relative w-full flex flex-col bg-blend-multiply",
+          "bg-champagne text-rich-black relative bg-fuzz min-h-screen w-full flex flex-col bg-blend-multiply",
           inter.className
         )}
       >
         <Header />
-        <main className="flex-grow h-full pb-8 px-6 md:px-8 lg:px-16">
+
+        {/* TODO: Add alphabetical navigation links */}
+        {/* <div className=" hidden xl:flex flex-col sticky top-32 left-8 w-min">
+          {letters.map((letter) => (
+            <a
+              key={`link-to-${letter}`}
+              href={`#${letter}`}
+              className={`${vidaloka.className} text-6xl hover:underline`}
+            >
+              {letter}
+            </a>
+          ))}
+        </div> */}
+        <main className="flex flex-row flex-grow h-full pb-8 px-6 md:px-8 lg:px-16">
           {children}
         </main>
         <Footer />
-        <Analytics/>
-        <SpeedInsights/>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

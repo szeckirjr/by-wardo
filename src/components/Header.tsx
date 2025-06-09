@@ -15,7 +15,7 @@ export default function Header() {
     <div
       className={classNames(
         "sticky top-0 flex flex-row justify-between items-baseline backdrop-blur-sm z-10",
-        "pt-6 md:pt-8 lg:pt-16 px-6 md:px-8 lg:px-16 pb-8",
+        "pt-6 md:pt-7 lg:pt-10 px-6 md:px-7 lg:px-10 pb-8",
         vidaloka.className
       )}
       style={{
@@ -25,7 +25,7 @@ export default function Header() {
     >
       <h1
         className={classNames({
-          "text-6xl lg:text-7xl": !isSmall,
+          "text-5xl lg:text-6xl": !isSmall,
           "text-4xl": isSmall,
         })}
       >

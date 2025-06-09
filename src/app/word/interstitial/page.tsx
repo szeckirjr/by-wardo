@@ -11,14 +11,9 @@ const interstitial: Word = {
   word: "Interstitial",
   phonetic: "[/in-tuhr-STISH-uhl/]",
   type: "adjective",
-  element: (
-    <>
-      <p className="text-xl md:text-2xl">
-        <span className="opacity-50">1.</span>Of, forming, or occupying
-        interstices (usually a very small space between things)
-      </p>
-    </>
-  ),
+  definitions: [
+    "Of, forming, or occupying interstices (usually a very small space between things)",
+  ],
   reference: {
     type: "book",
     title: "A Little Life",

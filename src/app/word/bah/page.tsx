@@ -8,11 +8,11 @@ const bah: Word = {
   element: (
     <>
       <p className="text-xl md:text-2xl">
-        <span className="opacity-50">1.</span>A versatile and multifaceted
+        <span className="opacity-50">1. </span>A versatile and multifaceted
         exclamation capturing a wide range of emotions
       </p>
       <p className="text-xl md:text-2xl">
-        <span className="opacity-50">2.</span>
+        <span className="opacity-50">2. </span>
         Works for almost anything: depending on the intonation, it can be used
         for excitement, <span className="opacity-90">rejection, </span>
         <span className="opacity-80">approval, </span>

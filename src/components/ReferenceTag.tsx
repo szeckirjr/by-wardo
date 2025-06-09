@@ -19,12 +19,10 @@ export default function ReferenceTag({
       noUnderline
       leftArrow
       element={
-        <a href={reference.href} target="_blank">
-          <p className="text-sm">
-            <span className="font-bold">{reference.title}</span> by{" "}
-            <span className="font-bold">{reference.author}</span>
-          </p>
-          <p className="text-sm">{reference.publisher}</p>
+        <a href={reference.href} target="_blank" className="text-sm">
+          <span className="font-bold">{reference.title}</span> by{" "}
+          <span className="font-bold">{reference.author}</span>
+          {reference.publisher}
         </a>
       }
     >
