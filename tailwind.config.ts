@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         beige: "#F2DCB1",
-        champagne: "#f5eee2",
+        champagne: "#F5EEE2",
         "rich-black": "#04080F",
       },
       backgroundImage: {
