@@ -20,7 +20,9 @@ export default function FoundInBook({ reference }: { reference: Reference }) {
           "w-full p-4 rounded-lg flex-col xs:flex-row gap-4 flex"
         )}
       >
-        <Image src={cover} alt={title} width={80} height={160} />
+        <div className="relative w-full max-w-[100px] h-40">
+          <Image src={cover} alt={title} fill objectFit="contain" />
+        </div>
         <div>
           <h4 className="text-2xl font-bold">{title}</h4>
           <p className="text-lg font-bold">{author}</p>
