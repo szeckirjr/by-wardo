@@ -19,6 +19,28 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon_256x256.png",
   },
+  openGraph: {
+    title: "Words",
+    description: "A collection of words I find interesting.",
+    url: "https://words.wardo.dev",
+    siteName: "Words by Wardo",
+    images: [
+      {
+        url: "https://words.wardo.dev/favicon_256x256.png",
+        width: 256,
+        height: 256,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Words",
+    description: "A collection of words I find interesting.",
+    images: ["https://words.wardo.dev/favicon_256x256.png"],
+    creator: "@szeckirjr",
+  },
 };
 
 const vidaloka = Vidaloka({
