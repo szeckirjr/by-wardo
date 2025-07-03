@@ -1,8 +1,6 @@
-"use client";
 import { Reference } from "@/types";
 import classNames from "classnames";
 import Image from "next/image";
-import { useState } from "react";
 import { GiBookmarklet } from "react-icons/gi";
 
 export default function FoundInBook({ reference }: { reference: Reference }) {

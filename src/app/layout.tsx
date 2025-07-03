@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Words by Wardo",
     images: [
       {
-        url: "https://words.wardo.dev/favicon_256x256.png",
+        url: "https://words.wardo.dev/icon.png",
         width: 200,
         height: 200,
       },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Words by Wardo",
     description: "A collection of words I find interesting.",
-    images: ["https://words.wardo.dev/favicon_256x256.png"],
+    images: ["https://words.wardo.dev/icon.png"],
     creator: "@szeckirjr",
   },
 };
