@@ -5,7 +5,8 @@ type BookTitles =
   | "a_little_life"
   | "there_is_no_antimemetics_division"
   | "how_to_change_your_mind"
-  | "daisy_jones_and_the_six";
+  | "daisy_jones_and_the_six"
+  | "homo_deus";
 
 const books: Record<BookTitles, Book> = {
   it: {
@@ -32,6 +33,11 @@ const books: Record<BookTitles, Book> = {
     title: "Daisy Jones & the Six: A Novel",
     author: "Taylor Jenkins Reid",
     cover: "/images/daisy_jones_and_the_six.png",
+  },
+  homo_deus: {
+    title: "Homo Deus: A Brief History of Tomorrow",
+    author: "Yuval Noah Harari",
+    cover: "/images/homo_deus.jpg",
   },
 };
 
@@ -346,6 +352,31 @@ const allWords: Record<string, Record<string, Word>> = {
           </>
         ),
       },
+    },
+    serendipity: {
+      word: "Serendipity",
+      phonetic: "[/ser-uhn-DIP-uh-tee/]",
+      type: "noun",
+      element: (
+        <>
+          <p className="text-xl md:text-2xl">
+            <span className="opacity-50">1.</span>The occurrence and development
+            of events by chance in a happy or beneficial way
+          </p>
+        </>
+      ),
+      reference: {
+        book: books.homo_deus,
+        excerpt: (
+          <>
+            Though science owes a huge debt to{" "}
+            <span className="font-bold">serendipity</span>, doctors don&apos;t
+            just throw different chemicals into test tubes, hoping to chance
+            upon some new medicine.
+          </>
+        ),
+      },
+      withCustomPage: "/word/serendipity",
     },
   },
   w: {

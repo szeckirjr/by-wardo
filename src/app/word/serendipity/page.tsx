@@ -4,42 +4,17 @@ import ReferenceTag, { WebsiteRef } from "@/components/ReferenceTag";
 import Tooltip from "@/components/Tooltip";
 import WordDefinition from "@/components/WordDefinition";
 import { Word } from "@/types";
+import { words } from "@/words";
 import classNames from "classnames";
 import { RiArrowDownWideLine } from "react-icons/ri";
-
-const serendipity: Word = {
-  word: "Serendipity",
-  phonetic: "[/ser-uhn-DIP-uh-tee/]",
-  type: "noun",
-  element: (
-    <>
-      <p className="text-xl md:text-2xl">
-        <span className="opacity-50">1.</span>The occurrence and development of
-        events by chance in a happy or beneficial way
-      </p>
-    </>
-  ),
-  reference: {
-    type: "book",
-    title: "Homo Deus: A Brief History of Tomorrow",
-    author: "Yuval Noah Harari",
-    cover: "/images/homo_deus.jpg",
-    excerpt: (
-      <>
-        Though science owes a huge debt to{" "}
-        <span className="font-bold">serendipity</span>, doctors don&apos;t just
-        throw different chemicals into test tubes, hoping to chance upon some
-        new medicine.
-      </>
-    ),
-  },
-};
 
 export default function Serendipity() {
   const scrollToContent = () => {
     const content = document.getElementById("serendipity-content");
     content?.scrollIntoView({ behavior: "smooth" });
   };
+  const serendipity = words["s"]["serendipity"];
+
   return (
     <div>
       <div className="min-h-[90vh] -mt-20 flex items-center relative">

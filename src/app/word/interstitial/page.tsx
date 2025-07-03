@@ -1,9 +1,7 @@
 "use client";
-import FoundInBook from "@/components/FoundInBook";
 import ReferenceTag, { WebsiteRef } from "@/components/ReferenceTag";
 import Tooltip from "@/components/Tooltip";
 import WordDefinition from "@/components/WordDefinition";
-import { Word } from "@/types";
 import { words } from "@/words";
 import classNames from "classnames";
 import { RiArrowDownWideLine } from "react-icons/ri";

@@ -1,8 +1,4 @@
-import WordDefinition from "@/components/WordDefinition";
-import WOTD from "@/components/WOTD";
-import classNames from "classnames";
 import { Vidaloka } from "next/font/google";
-import WordCard from "@/components/WordCard";
 import { letters, words } from "@/words";
 import LetterSegment from "@/components/LetterSegment";
 
