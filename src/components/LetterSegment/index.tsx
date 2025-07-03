@@ -39,7 +39,7 @@ export default function LetterSegment({ letter }: { letter: string }) {
             key={word.word}
             className={classNames(
               vidaloka.className,
-              "text-4xl xs:text-6xl lg:text-7xl"
+              "text-4xl sm:text-6xl lg:text-7xl"
             )}
           >
             {word.withCustomPage ? (

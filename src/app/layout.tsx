@@ -57,7 +57,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={classNames(
-          "bg-champagne text-rich-black relative bg-fuzz min-h-screen w-full flex flex-col bg-blend-multiply",
+          "bg-fuzz_tinted text-rich-black relative min-h-screen w-full max-h-screen flex flex-col bg-blend-multiply",
           inter.className
         )}
       >
@@ -75,7 +75,7 @@ export default function RootLayout({
             </a>
           ))}
         </div> */}
-        <main className="flex flex-row flex-grow h-full pb-8 px-6 md:px-8 lg:px-16">
+        <main className="flex flex-row flex-grow h-full overflow-x-clip pb-8 px-6 md:px-8 lg:px-16">
           {children}
         </main>
         <Footer />
