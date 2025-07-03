@@ -1,12 +1,12 @@
 import WordDefinition from "@/components/WordDefinition";
 import { words } from "@/words";
 
-export default async function WordPage({
+export default function WordPage({
   params,
 }: {
-  params: Promise<{ letter: string; word: string }>;
+  params: { letter: string; word: string };
 }) {
-  const { letter: letterParam, word: wordParam } = await params;
+  const { letter: letterParam, word: wordParam } = params;
   const word = words[letterParam][wordParam];
 
   return (
