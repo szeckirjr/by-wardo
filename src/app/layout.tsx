@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     url: "https://wardo.dev/",
     name: "Eduardo Szeckir",
   },
+  icons: {
+    icon: "/favicon_256x256.png",
+  },
 };
 
 const vidaloka = Vidaloka({
