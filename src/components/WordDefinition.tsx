@@ -1,12 +1,9 @@
 import { Word } from "@/types";
 import classNames from "classnames";
-import { Vidaloka } from "next/font/google";
+import { vidaloka } from "@/fonts";
 import FoundInBook from "./FoundInBook";
 
-const vidaloka = Vidaloka({
-  weight: "400",
-  subsets: ["latin"],
-});
+// Local font defined in src/fonts.ts
 
 type Props = {
   word?: Word;

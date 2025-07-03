@@ -1,11 +1,8 @@
-import { Vidaloka } from "next/font/google";
+import { vidaloka } from "@/fonts";
 import { letters, words } from "@/words";
 import LetterSegment from "@/components/LetterSegment";
 
-const vidaloka = Vidaloka({
-  weight: "400",
-  subsets: ["latin"],
-});
+// Local font defined in src/fonts.ts
 
 export default function Home() {
   const PostList = () => (

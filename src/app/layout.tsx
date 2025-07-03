@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Vidaloka } from "next/font/google";
+import { inter, vidaloka } from "@/fonts";
 import "./globals.css";
 import classNames from "classnames";
 import Header from "@/components/Header";
@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const inter = Inter({ subsets: ["latin"] });
+// Use locally hosted fonts to avoid external fetches during build
 
 export const metadata: Metadata = {
   title: "Words by Wardo",
@@ -43,10 +43,7 @@ export const metadata: Metadata = {
   },
 };
 
-const vidaloka = Vidaloka({
-  weight: "400",
-  subsets: ["latin"],
-});
+// Local copy of Vidaloka font
 
 export default function RootLayout({
   children,
