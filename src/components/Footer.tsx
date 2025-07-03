@@ -1,10 +1,7 @@
 import classNames from "classnames";
-import { Vidaloka } from "next/font/google";
+import { vidaloka } from "@/fonts";
 
-const vidaloka = Vidaloka({
-  weight: "400",
-  subsets: ["latin"],
-});
+// Local font defined in src/fonts.ts
 
 export function Footer() {
   return (

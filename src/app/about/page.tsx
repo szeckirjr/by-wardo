@@ -1,11 +1,8 @@
 import React from "react";
-import { Vidaloka } from "next/font/google";
+import { vidaloka } from "@/fonts";
 import classNames from "classnames";
 
-const vidaloka = Vidaloka({
-  weight: "400",
-  subsets: ["latin"],
-});
+// Local font defined in src/fonts.ts
 
 export default function About() {
   return (

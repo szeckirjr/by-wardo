@@ -1,14 +1,11 @@
 "use client";
 
 import classNames from "classnames";
-import { Vidaloka } from "next/font/google";
+import { vidaloka } from "@/fonts";
 import Image from "next/image";
 import { useState } from "react";
 
-const vidaloka = Vidaloka({
-  weight: "400",
-  subsets: ["latin"],
-});
+// Local font defined in src/fonts.ts
 
 export default function WOTD() {
   const [openStatus, setOpenStatus] = useState(true);

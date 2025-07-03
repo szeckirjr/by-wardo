@@ -2,17 +2,14 @@
 
 import { words } from "@/words";
 import classNames from "classnames";
-import { Vidaloka } from "next/font/google";
+import { vidaloka } from "@/fonts";
 import WordPopUpBox from "../WordPopUpBox";
 import { useState } from "react";
 import { Word } from "@/types";
 import Link from "next/link";
 import { TbExternalLink } from "react-icons/tb";
 
-const vidaloka = Vidaloka({
-  weight: "400",
-  subsets: ["latin"],
-});
+// Local font defined in src/fonts.ts
 
 export default function LetterSegment({ letter }: { letter: string }) {
   const [popUpWord, setPopUpWord] = useState<Word | null>(null);

@@ -2,7 +2,11 @@ import { render, screen } from '@testing-library/react';
 import LetterSegment from '../LetterSegment';
 import { words } from '@/words';
 
-jest.mock('../WordPopUpBox', () => () => <div data-testid="popup" />);
+jest.mock('../WordPopUpBox', () => {
+  const MockPopUp = () => <div data-testid="popup" />;
+  MockPopUp.displayName = 'MockPopUp';
+  return MockPopUp;
+});
 
 describe('LetterSegment', () => {
   it('renders words for given letter', () => {
