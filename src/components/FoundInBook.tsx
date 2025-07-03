@@ -19,7 +19,12 @@ export default function FoundInBook({ reference }: { reference: Reference }) {
         )}
       >
         <div className="relative w-full max-w-[100px] h-40">
-          <Image src={cover} alt={title} fill objectFit="contain" />
+          <Image
+            src={cover}
+            alt={title}
+            fill
+            style={{ objectFit: "contain" }}
+          />
         </div>
         <div>
           <h4 className="text-2xl font-bold">{title}</h4>
