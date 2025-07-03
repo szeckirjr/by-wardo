@@ -4,37 +4,16 @@ import ReferenceTag, { WebsiteRef } from "@/components/ReferenceTag";
 import Tooltip from "@/components/Tooltip";
 import WordDefinition from "@/components/WordDefinition";
 import { Word } from "@/types";
+import { words } from "@/words";
 import classNames from "classnames";
 import { RiArrowDownWideLine } from "react-icons/ri";
-
-const interstitial: Word = {
-  word: "Interstitial",
-  phonetic: "[/in-tuhr-STISH-uhl/]",
-  type: "adjective",
-  definitions: [
-    "Of, forming, or occupying interstices (usually a very small space between things)",
-  ],
-  reference: {
-    type: "book",
-    title: "A Little Life",
-    author: "Hanya Yanagihara",
-    cover: "/images/a_little_life.jpg",
-    excerpt: (
-      <>
-        The stairwells between the floors are densely hung with{" "}
-        <span className="font-bold">interstitial</span> pieces, drawings and
-        small paintings, studies and experimentations, that JB made between
-        bodies of work.
-      </>
-    ),
-  },
-};
 
 export default function Interstitial() {
   const scrollToContent = () => {
     const content = document.getElementById("interstitial-content");
     content?.scrollIntoView({ behavior: "smooth" });
   };
+  const interstitial = words["i"]["interstitial"];
   return (
     <div>
       <div className="min-h-[90vh] -mt-20 flex items-center relative">
@@ -140,9 +119,6 @@ export default function Interstitial() {
           English a rich and evocative language, demonstrating that the beauty
           of speech often lies in the spaces between.
         </p>
-        {interstitial.reference && (
-          <FoundInBook reference={interstitial.reference} />
-        )}
       </div>
     </div>
   );

@@ -1,12 +1,13 @@
-interface Book {
-  type: "book";
+export type Book = {
   title: string;
   author: string;
   cover: string;
+};
+
+export interface Reference {
+  book: Book;
   excerpt: React.ReactNode;
 }
-
-export type Reference = Book;
 
 export interface Word {
   word: string;
@@ -15,4 +16,5 @@ export interface Word {
   element?: React.ReactNode;
   definitions?: string[] | React.ReactNode[];
   reference?: Reference;
+  withCustomPage?: string;
 }

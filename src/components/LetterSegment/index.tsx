@@ -6,6 +6,8 @@ import { Vidaloka } from "next/font/google";
 import WordPopUpBox from "../WordPopUpBox";
 import { useState } from "react";
 import { Word } from "@/types";
+import Link from "next/link";
+import { TbExternalLink } from "react-icons/tb";
 
 const vidaloka = Vidaloka({
   weight: "400",
@@ -40,12 +42,21 @@ export default function LetterSegment({ letter }: { letter: string }) {
               "text-4xl xs:text-6xl lg:text-7xl"
             )}
           >
-            <button
-              onClick={() => setPopUpWord(word)}
-              className="hover:underline"
-            >
-              {word.word}
-            </button>
+            {word.withCustomPage ? (
+              <Link
+                href={word.withCustomPage}
+                className="hover:underline flex flex-row items-center gap-1"
+              >
+                {word.word} <TbExternalLink className="scale-75" />
+              </Link>
+            ) : (
+              <button
+                onClick={() => setPopUpWord(word)}
+                className="hover:underline"
+              >
+                {word.word}
+              </button>
+            )}
             {popUpWord === word ? (
               <WordPopUpBox word={word} closeModal={() => setPopUpWord(null)} />
             ) : null}

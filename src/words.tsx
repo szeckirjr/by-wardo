@@ -1,6 +1,214 @@
-import { Word } from "./types";
+import { Book, Word } from "./types";
 
-export const words: Record<string, Record<string, Word>> = {
+type BookTitles =
+  | "it"
+  | "a_little_life"
+  | "there_is_no_antimemetics_division"
+  | "how_to_change_your_mind"
+  | "daisy_jones_and_the_six";
+
+const books: Record<BookTitles, Book> = {
+  it: {
+    title: "It",
+    author: "Stephen King",
+    cover: "/images/it.png",
+  },
+  a_little_life: {
+    title: "A Little Life",
+    author: "Hanya Yanagihara",
+    cover: "/images/a_little_life.jpg",
+  },
+  there_is_no_antimemetics_division: {
+    title: "There Is No Antimemetics Division",
+    author: "qntm",
+    cover: "/images/there_is_no_antimemetics_division.png",
+  },
+  how_to_change_your_mind: {
+    title: "How to Change Your Mind",
+    author: "Michael Pollan",
+    cover: "/images/how_to_change_your_mind.png",
+  },
+  daisy_jones_and_the_six: {
+    title: "Daisy Jones & the Six: A Novel",
+    author: "Taylor Jenkins Reid",
+    cover: "/images/daisy_jones_and_the_six.png",
+  },
+};
+
+const allWords: Record<string, Record<string, Word>> = {
+  // g: {
+  // gook: {
+  //   word: "Gook",
+  //   phonetic: "[/gook/]",
+  //   type: "noun",
+  //   definitions: [
+  //     "A sloppy wet or viscous substance",
+  //     "Also used as a derogatory term for a person of Asian descent",
+  //   ],
+  //   reference: {
+  //     book: books.it,
+  //     excerpt: (
+  //       <>
+  //         The <span className="font-bold">gook</span> in between the two
+  //         boards will take most of the water pressure.
+  //       </>
+  //     ),
+  //   },
+  // },
+  // },
+  a: {
+    anomalous: {
+      word: "Anomalous",
+      phonetic: "TODO:",
+      type: "adjective",
+      definitions: ["Deviating from what is standard, normal, or expected"],
+      reference: {
+        book: books.there_is_no_antimemetics_division,
+        excerpt: (
+          <>
+            He wakes up in a standard Humanoid Containment Unit, a stackable
+            one-bedroom apartment with holographic fake windows, impregnable
+            walls and extensive discreed modifications for the security and
+            monitoring of <span className="font-bold">anomalous</span> entities.
+          </>
+        ),
+      },
+    },
+    auspicious: {
+      word: "Auspicious",
+      phonetic: "TODO:",
+      type: "adjective",
+      definitions: ["Conductive to success", "Favourable, prosperous"],
+      reference: {
+        book: books.daisy_jones_and_the_six,
+        excerpt: (
+          <>
+            <span className="font-bold">Nick Harris</span> (rock critic): Their
+            self-titled debut was a respectable entrace into the rock scene.
+            [...] A little bit folky, very catchy, lots of swagger, big riffs,
+            hard drums, and that great Billy Dunne smooth growl. <br /> It was
+            an <span className="font-bold">auspicious</span> start.
+          </>
+        ),
+      },
+    },
+  },
+  c: {
+    cripes: {
+      word: "Cripes",
+      phonetic: "[/KRAIPZ/]",
+      type: "exclamation",
+      definitions: ["Used as an euphemism for Christ"],
+      reference: {
+        book: books.it,
+        excerpt: (
+          <>
+            Oh, <span className="font-bold">cripes</span>!
+          </>
+        ),
+      },
+    },
+  },
+  d: {
+    deportment: {
+      word: "Deportment",
+      phonetic: "[/dih-PORT-muhnt/]",
+      type: "noun",
+      definitions: ["The way a person behaves, their manners"],
+      reference: {
+        book: books.it,
+        excerpt: (
+          <>
+            He knew that Richie got A&apos;s and B&apos;s in his schoolwork, but
+            he also knew that Richie regularly got C&apos;s and D&apos;s in{" "}
+            <span className="font-bold">deportment</span>.
+          </>
+        ),
+      },
+    },
+    dote: {
+      word: "Dote",
+      phonetic: "TODO:",
+      type: "verb",
+      definitions: [
+        "To be extremely and uncritically fond of someone",
+        "Adoring",
+      ],
+      reference: {
+        book: books.daisy_jones_and_the_six,
+        excerpt: (
+          <>
+            <span className="font-bold">Daisy:</span> [...] Hank was checking on
+            me every day, pretending he was{" "}
+            <span className="font-bold">doting</span> on me but really just
+            trying to convince me to get to the studio...
+          </>
+        ),
+      },
+    },
+  },
+  i: {
+    interstitial: {
+      word: "Interstitial",
+      phonetic: "[/in-tuhr-STISH-uhl/]",
+      type: "adjective",
+      definitions: [
+        "Of, forming, or occupying interstices (usually a very small space between things)",
+      ],
+      reference: {
+        book: books.a_little_life,
+        excerpt: (
+          <>
+            The stairwells between the floors are densely hung with{" "}
+            <span className="font-bold">interstitial</span> pieces, drawings and
+            small paintings, studies and experimentations, that JB made between
+            bodies of work.
+          </>
+        ),
+      },
+      withCustomPage: "/word/interstitial",
+    },
+    ineffable: {
+      word: "Ineffable",
+      phonetic: "[/in-EH-fuh-buhl/]",
+      type: "adjective",
+      definitions: [
+        "Too great or extreme to be expressed or described in words",
+        "Not to be uttered; taboo",
+      ],
+      reference: {
+        book: books.how_to_change_your_mind,
+        excerpt: (
+          <>
+            <span className="font-bold">Ineffability</span> is of course a
+            hallmark of the mystical experience.
+          </>
+        ),
+      },
+    },
+  },
+  j: {
+    jibe: {
+      word: "Jibe",
+      phonetic: "TODO:",
+      type: "verb",
+      definitions: [
+        "Make insulting or mocking remarks",
+        "Informally, also to agree",
+      ],
+      reference: {
+        book: books.daisy_jones_and_the_six,
+        excerpt: (
+          <>
+            <span className="font-bold">Billy:</span> Niccolo came down to the
+            studio to hear us rehearse a lot. There was one day when Daisy and I
+            ... we were rehearsing the vocal harmonies and it wasn&apos;t{" "}
+            <span className="font-bold">jibing</span>.
+          </>
+        ),
+      },
+    },
+  },
   m: {
     memetics: {
       word: "Memetics",
@@ -14,10 +222,7 @@ export const words: Record<string, Record<string, Word>> = {
         </>,
       ],
       reference: {
-        type: "book",
-        title: "There Is No Antimemetics Division",
-        author: "",
-        cover: "",
+        book: books.there_is_no_antimemetics_division,
         excerpt: (
           <>
             Ironically, the most practical way to do what would be to develop an
@@ -31,139 +236,147 @@ export const words: Record<string, Record<string, Word>> = {
       },
     },
   },
-  a: {
-    aesthetic: {
-      word: "Aesthetic",
-      type: "adjective",
-      phonetic: "[/es-THET-ik/]",
-    },
-    ambiguous: {
-      word: "Ambiguous",
-      type: "adjective",
-      phonetic: "[/am-BIG-yoo-uhs/]",
-    },
-    archaic: {
-      word: "Archaic",
-      type: "adjective",
-      phonetic: "[/ahr-KEY-ik/]",
-    },
-    auspicious: {
-      word: "Auspicious",
-      type: "adjective",
-      phonetic: "[/aw-SPISH-uhs/]",
-    },
-    axiom: {
-      word: "Axiom",
+  p: {
+    phenomenology: {
+      word: "Phenomenology",
+      phonetic: "[/fuh-NOM-uh-NAW-luh-jee/]",
       type: "noun",
-      phonetic: "[/AK-see-uhm/]",
-    },
-    anecdote: {
-      word: "Anecdote",
-      type: "noun",
-      phonetic: "[/AN-ik-doht/]",
-    },
-    arduous: {
-      word: "Arduous",
-      type: "adjective",
-      phonetic: "[/AHR-joo-uhs/]",
-    },
-    aptitude: {
-      word: "Aptitude",
-      type: "noun",
-      phonetic: "[/AP-ti-tood/]",
-    },
-    amorphous: {
-      word: "Amorphous",
-      type: "adjective",
-      phonetic: "[/uh-MAWR-fuhs/]",
-    },
-    aplomb: {
-      word: "Aplomb",
-      type: "noun",
-      phonetic: "[/uh-PLOM/]",
+      definitions: [
+        "The philosophical study of the structures of experience and consciousness",
+        "The science of phenomena as disctinct from that of the nature of being",
+      ],
+      reference: {
+        book: books.how_to_change_your_mind,
+        excerpt: (
+          <>
+            Despite his behaviorist orientation as a scientist, Griffiths had
+            always been interested in what philosophers call{" "}
+            <span className="font-bold">phenomenology</span>-the subjective
+            experience of consciousness.
+          </>
+        ),
+      },
     },
   },
-  b: {
-    benevolent: {
-      word: "Benevolent",
-      type: "adjective",
-      phonetic: "[/buh-NEV-uh-luhnt/]",
-    },
-    banal: {
-      word: "Banal",
-      type: "adjective",
-      phonetic: "[/buh-NAL/]",
-    },
-    brevity: {
-      word: "Brevity",
+  s: {
+    scallop: {
+      word: "Scallop",
+      phonetic: "[/SKA-luhp/]",
       type: "noun",
-      phonetic: "[/BREV-i-tee/]",
+      definitions: [
+        "An edible mollusk with a ribbed shell; they swim by rapidly opening and closing their shells",
+        "Each of a series of convex rouded projections forming the edge of a garment/fabric, imitating the shape of a scallop shell",
+      ],
+      reference: {
+        book: books.it,
+        excerpt: (
+          <>
+            They had already done something to the geography of the streambanks,
+            Eddie saw: the diverted current was cutting{" "}
+            <span className="font-bold">scalloped</span> hollows into them.
+          </>
+        ),
+      },
     },
-    belligerent: {
-      word: "Belligerent",
+    sluice: {
+      word: "Sluice",
+      phonetic: "[/SLOOS/]",
+      type: "noun, verb",
+      definitions: [
+        "A sliding gate or other device for controlling the flow of water, especially one in a lock gate",
+        "To wash or rinse freely with a stream or shower of water",
+      ],
+      reference: {
+        book: books.it,
+        excerpt: (
+          <>
+            They sat on the bank and ate, not talking much, watching the water
+            stack up behind the dam and{" "}
+            <span className="font-bold">sluice</span> around the ends of the
+            boards.
+          </>
+        ),
+      },
+    },
+    stoop: {
+      word: "Stoop",
+      phonetic: "TODO:",
+      type: "noun, verb",
+      definitions: [
+        "The act of bending one's head/body forward and downwards (also the name for the posture it forms)",
+        "A porch with steps in front of a house or building",
+      ],
+      reference: {
+        book: books.daisy_jones_and_the_six,
+        excerpt: (
+          <>
+            <p>
+              <span className="font-bold">Daisy:</span> I went back to the
+              Marmont. I&apos;d been crying; I had mascara running down my face.
+              Hank was waiting for me, sitting on my{" "}
+              <span className="font-bold">stoop</span>.
+            </p>
+            <br />
+            <p>
+              <span className="font-bold">Billy:</span> We were all loaded up
+              and the bus driver pulled out of the driveway and Camila had just
+              run down to the front <span className="font-bold">stoop</span> in
+              her nightgown.
+            </p>
+          </>
+        ),
+      },
+    },
+    saccharine: {
+      word: "Saccharine",
+      phonetic: "TODO:",
       type: "adjective",
-      phonetic: "[/buh-LIJ-er-uhnt/]",
+      definitions: [
+        "Excessively sweet or sentimental",
+        // TODO: Add the dated fact that this related to containing sugar (sugary) that's why the name
+      ],
+      reference: {
+        book: books.daisy_jones_and_the_six,
+        excerpt: (
+          <>
+            They created a deeply heartfelt call and response–a story of this
+            romantic and idealized future that may never come to pass. The song
+            verges on being a bit <span className="font-bold">saccharine</span>.
+            But the end undercuts the sweetness just enough.
+          </>
+        ),
+      },
     },
   },
-  c: {
-    cacophony: {
-      word: "Cacophony",
+  w: {
+    wariness: {
+      word: "Wariness",
+      phonetic: "[/WEH-ree-ness/]",
       type: "noun",
-      phonetic: "[/kuh-KOF-uh-nee/]",
-    },
-    candid: {
-      word: "Candid",
-      type: "adjective",
-      phonetic: "[/KAN-did/]",
-    },
-    catharsis: {
-      word: "Catharsis",
-      type: "noun",
-      phonetic: "[/kuh-THAHR-sis/]",
-    },
-    clandestine: {
-      word: "Clandestine",
-      type: "adjective",
-      phonetic: "[/klan-DES-tin/]",
-    },
-    cognizant: {
-      word: "Cognizant",
-      type: "adjective",
-      phonetic: "[/KOG-ni-zuhnt/]",
-    },
-    conundrum: {
-      word: "Conundrum",
-      type: "noun",
-      phonetic: "[/kuh-NUHN-druhm/]",
-    },
-    cynical: {
-      word: "Cynical",
-      type: "adjective",
-      phonetic: "[/SIN-i-kuhl/]",
-    },
-  },
-  d: {
-    deleterious: {
-      word: "Deleterious",
-      type: "adjective",
-      phonetic: "[/del-i-TEER-ee-uhs/]",
-    },
-    dichotomy: {
-      word: "Dichotomy",
-      type: "noun",
-      phonetic: "[/dahy-KOT-uh-mee/]",
-    },
-    disparate: {
-      word: "Disparate",
-      type: "adjective",
-      phonetic: "[/DIS-puh-rit/]",
-    },
-    dubious: {
-      word: "Dubious",
-      type: "adjective",
-      phonetic: "[/DOO-bee-uhs/]",
+      definitions: [
+        "Caution about possible dangers or problems",
+        "The quality of being wary, cautious, or on guard",
+      ],
+      reference: {
+        book: books.it,
+        excerpt: (
+          <>
+            Ben, Eddie saw, was looking at Richie with a mixture of awe and{" "}
+            <span className="font-bold">wariness</span>.
+          </>
+        ),
+      },
     },
   },
 };
+
+// Export const words that should be used in the app and it has all letters
+// and words sorted alphabetically
+export const words = Object.keys(allWords)
+  .sort()
+  .reduce((acc, key) => {
+    acc[key] = allWords[key];
+    return acc;
+  }, {} as Record<string, Record<string, Word>>);
 
 export const letters = Object.keys(words);
