@@ -12,7 +12,8 @@ type BookTitles =
   | "there_is_no_antimemetics_division"
   | "how_to_change_your_mind"
   | "daisy_jones_and_the_six"
-  | "homo_deus";
+  | "homo_deus"
+  | "behave_biology_of_humans";
 
 const books: Record<BookTitles, Book> = {
   it: {
@@ -44,6 +45,11 @@ const books: Record<BookTitles, Book> = {
     title: "Homo Deus: A Brief History of Tomorrow",
     author: "Yuval Noah Harari",
     cover: homoDeusCover,
+  },
+  behave_biology_of_humans: {
+    title: "Behave: The Biology of Humans at Our Best and Worst",
+    author: "Robert M. Sapolsky",
+    cover: "/images/behave_biology_of_humans.png",
   },
 };
 
@@ -198,6 +204,29 @@ const allWords: Record<string, Record<string, Word>> = {
         ),
       },
     },
+    incongruously: {
+      word: "Incongruously",
+      phonetic: "[/in-KON-groo-uhs-lee/]",
+      type: "adverb",
+      definitions: [
+        "In a way that is not in harmony or keeping with the surroundings or other aspects of something",
+        "In a way that is inappropriate or out of place",
+      ],
+      reference: {
+        book: books.behave_biology_of_humans,
+        excerpt: (
+          <>
+            [he] describes hearing rumors while in Indonesia that when a
+            paramilitary group would arrive to exterminate every person in some
+            village, they would,{" "}
+            <span className="font-bold">incongruously</span>, bring along a
+            traditional gamelan orchestra. [...] Why? Why would you possibly do
+            that? The man looked puzzled and gave what seemed to him a
+            self-evident answer: &quot;Well, to make it more beautiful.&quot;
+          </>
+        ),
+      },
+    },
   },
   j: {
     jibe: {
@@ -243,6 +272,27 @@ const allWords: Record<string, Record<string, Word>> = {
             intrinsically worthless and harmful. Enrich it with religious or
             pseudoscientific virals and release it to the general public. A year
             after it got out we&apos;d be tearing our own labs down.
+          </>
+        ),
+      },
+    },
+    mire: {
+      word: "Mire",
+      phonetic: "[/MAIR/]",
+      type: "verb",
+      definitions: [
+        "To involve someone or something in a difficult situation",
+        "Also to cover or soil with mud",
+      ],
+      reference: {
+        book: books.behave_biology_of_humans,
+        excerpt: (
+          <>
+            Early in the last century, this emerged as the science of
+            &quot;behavior genetics.&quot; As we&apos;ll see, the field has
+            often been <span className="font-bold">mired</span> in controversy,
+            typically because of disagreements over the magnitude of genetic
+            effects on things like IQ or sexual orientation.
           </>
         ),
       },
@@ -383,6 +433,27 @@ const allWords: Record<string, Record<string, Word>> = {
         ),
       },
       withCustomPage: "/word/serendipity",
+    },
+    schadenfreude: {
+      word: "Schadenfreude",
+      phonetic: "[/SHAH-den-froy-duh/]",
+      type: "noun",
+      definitions: [
+        "Pleasure derived by someone from another person's misfortune",
+      ],
+      reference: {
+        book: books.behave_biology_of_humans,
+        excerpt: (
+          <>
+            Furthermore, the brain becomes literal when we do the flip side of
+            empathy. It&apos;s painful watching a hated competitor succeed, and
+            we activate the ACC at that time. Conversely, if he fails, we gloat,
+            feel <span className="font-bold">schadenfreude</span>, get pleasure
+            from his pain, and activate dopaminergic reward pathways. Forget
+            &quot;Your pain is my pain.&quot; Your pain is my gain.
+          </>
+        ),
+      },
     },
   },
   w: {
