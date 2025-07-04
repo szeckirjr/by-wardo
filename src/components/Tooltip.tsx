@@ -29,11 +29,11 @@ export default function Tooltip({
         </p>
         {/* Arrow in the middle of the square */}
         {!leftArrow && (
-          <div className="absolute w-2 h-2 bg-zinc-800 transform rotate-45 -bottom-1 left-1/2 -translate-x-1/2"></div>
+          <div data-testid="center-arrow" className="absolute w-2 h-2 bg-zinc-800 transform rotate-45 -bottom-1 left-1/2 -translate-x-1/2"></div>
         )}
         {/* Arrow on the left side */}
         {leftArrow && (
-          <div className="absolute w-2 h-2 bg-zinc-800 transform rotate-45 -bottom-1 left-2"></div>
+          <div data-testid="left-arrow" className="absolute w-2 h-2 bg-zinc-800 transform rotate-45 -bottom-1 left-2"></div>
         )}
       </div>
     </div>

@@ -9,6 +9,7 @@ const customJestConfig = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
+  coveragePathIgnorePatterns: ['<rootDir>/src/fonts.ts'],
   testEnvironment: 'jest-environment-jsdom',
 };
 
