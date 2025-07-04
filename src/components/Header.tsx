@@ -2,6 +2,7 @@
 import classNames from "classnames";
 import { vidaloka } from "@/fonts";
 import { usePathname } from "next/navigation";
+import SearchBar from "./SearchBar";
 
 // Local font defined in src/fonts.ts
 
@@ -30,6 +31,7 @@ export default function Header() {
           Words
         </a>
       </h1>
+      <SearchBar />
       {/* TODO: Implement language toggle for Portuguese/English */}
       {/* <FlagToggle /> */}
     </div>
