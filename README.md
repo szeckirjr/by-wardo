@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Words by Wardo
 
-## Getting Started
+A small [Next.js](https://nextjs.org/) site that highlights interesting or unusual English words. Each entry includes a definition and an example taken from books that inspired its inclusion. The project is completely static and uses Tailwind CSS and locally hosted fonts.
 
-First, run the development server:
+The site is deployed via [Vercel](https://vercel.com/) at [https://words.wardo.dev/](https://words.wardo.dev/).
+
+## Running locally
+
+Install dependencies with `npm install` and then start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To create a production build run:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run build
+```
 
-## Learn More
+and serve it with:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Available commands
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `npm run dev` – start the Next.js development server
+- `npm run build` – build the static export
+- `npm start` – serve the production build
+- `npm run lint` – run ESLint
+- `npm test` – execute the Jest test suite
+- `npm run test:coverage` – run tests with coverage reporting
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The word data lives in [`src/words.tsx`](src/words.tsx) and page components are under [`src/app`](src/app). Unit tests are located alongside components in [`src/components/__tests__`](src/components/__tests__).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+MIT
