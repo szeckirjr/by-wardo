@@ -20,6 +20,7 @@ export default function FoundInBook({ reference }: { reference: Reference }) {
       >
         <div className="relative w-full max-w-[100px] h-40">
           <Image
+            key={cover.src}
             src={cover}
             alt={title}
             placeholder="blur"
