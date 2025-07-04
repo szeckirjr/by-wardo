@@ -5,6 +5,7 @@ import antimemeticsCover from "../public/images/there_is_no_antimemetics_divisio
 import changeMindCover from "../public/images/how_to_change_your_mind.png";
 import daisyJonesCover from "../public/images/daisy_jones_and_the_six.png";
 import homoDeusCover from "../public/images/homo_deus.jpg";
+import behaveHumanBiologyCover from "../public/images/behave_biology_of_humans.png";
 
 type BookTitles =
   | "it"
@@ -49,7 +50,7 @@ const books: Record<BookTitles, Book> = {
   behave_biology_of_humans: {
     title: "Behave: The Biology of Humans at Our Best and Worst",
     author: "Robert M. Sapolsky",
-    cover: "/images/behave_biology_of_humans.png",
+    cover: behaveHumanBiologyCover,
   },
 };
 
