@@ -7,9 +7,10 @@ import FoundInBook from "./FoundInBook";
 
 type Props = {
   word?: Word;
+  showReference?: boolean;
 };
 
-export default function WordDefinition({ word }: Props) {
+export default function WordDefinition({ word, showReference }: Props) {
   if (!word) return null;
   const {
     word: wordLabel,
@@ -45,7 +46,9 @@ export default function WordDefinition({ word }: Props) {
               </p>
             ))}
       </div>
-      {word.reference && <FoundInBook reference={word.reference} />}
+      {showReference && word.reference && (
+        <FoundInBook reference={word.reference} />
+      )}
     </div>
   );
 }

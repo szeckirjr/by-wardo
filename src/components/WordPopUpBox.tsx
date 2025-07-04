@@ -4,8 +4,9 @@ import { Word } from "@/types";
 import { useEffect, useRef, useState } from "react";
 import { words, letters } from "@/words";
 import { TbX } from "react-icons/tb";
-import { GiRollingDices } from "react-icons/gi";
+import { GiBookmarklet, GiRollingDices } from "react-icons/gi";
 import WordDefinition from "./WordDefinition";
+import classNames from "classnames";
 
 export default function WordPopUpBox({
   word,
@@ -16,6 +17,7 @@ export default function WordPopUpBox({
 }) {
   const modalRef = useRef<HTMLDivElement | null>(null);
   const [currentWord, setCurrentWord] = useState<Word>(word);
+  const [showRefrence, setShowReference] = useState<boolean>(true);
 
   useEffect(() => {
     setCurrentWord(word);
@@ -61,28 +63,52 @@ export default function WordPopUpBox({
   return (
     <div
       id="modal-backdrop"
-      className="fixed inset-0 bg-black bg-opacity-20 z-40"
+      className="fixed inset-0 bg-black bg-opacity-20 z-40 backdrop-blur-sm"
       onClick={(e) => e.stopPropagation()}
     >
-      <div
-        ref={modalRef}
-        className="w-full overflow-y-auto max-w-screen-md max-h-[85vh] top-[10%] left-1/2 transform -translate-x-1/2 py-4 px-8 bg-champagne rounded-lg z-50 fixed"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          onClick={closeModal}
-          aria-label="Close"
-          className="absolute top-4 right-4 text-2xl opacity-60 hover:opacity-100"
+      <div className="relative w-full max-w-screen-md  top-[80px] left-1/2 transform -translate-x-1/2">
+        <div
+          ref={modalRef}
+          className="w-full overflow-y-auto py-4 px-8 bg-champagne rounded-lg z-50 fixed max-h-[85vh] border border-[#6e6a65] shadow-lg"
+          onClick={(e) => e.stopPropagation()}
         >
-          <TbX size={28} />
-        </button>
-        <WordDefinition word={currentWord} />
+          <button
+            onClick={closeModal}
+            aria-label="Close"
+            className="fixed top-4 right-4 text-2xl opacity-60 hover:opacity-100"
+          >
+            <TbX size={28} />
+          </button>
+          <WordDefinition word={currentWord} showReference={showRefrence} />
+        </div>
         <button
           onClick={handleRandom}
           aria-label="Random word"
-          className="absolute top-4 right-12 text-2xl opacity-60 hover:opacity-100"
+          className="absolute -top-16 right-16 lg:top-16 lg:-right-16 text-2xl group z-[55] bg-champagne rounded-full p-2 border border-[#6e6a65] shadow-md"
         >
-          <GiRollingDices size={42} />
+          <GiRollingDices
+            className="opacity-60 group-hover:opacity-80 "
+            size={36}
+          />
+        </button>
+        <button
+          onClick={() => setShowReference(!showRefrence)}
+          aria-label="Random word"
+          className={classNames(
+            "absolute -top-16 right-1 lg:top-1 lg:-right-16 text-2xl group z-[55] bg-champagne rounded-full p-2 border shadow-md",
+            {
+              "border-[#6e6a65]": !showRefrence,
+              "border-black": showRefrence,
+            }
+          )}
+        >
+          <GiBookmarklet
+            className={classNames("opacity-60 pt-1", {
+              "opacity-100": showRefrence,
+              "group-hover:opacity-80": !showRefrence,
+            })}
+            size={36}
+          />
         </button>
       </div>
     </div>
