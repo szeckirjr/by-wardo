@@ -1,7 +1,9 @@
 "use client";
 
 import { Word } from "@/types";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { words, letters } from "@/words";
+import { TbX, TbDice } from "react-icons/tb";
 import WordDefinition from "./WordDefinition";
 
 export default function WordPopUpBox({
@@ -12,6 +14,21 @@ export default function WordPopUpBox({
   closeModal?: () => void;
 }) {
   const modalRef = useRef<HTMLDivElement | null>(null);
+  const [currentWord, setCurrentWord] = useState<Word>(word);
+
+  useEffect(() => {
+    setCurrentWord(word);
+  }, [word]);
+
+  const getRandomWord = () => {
+    const letter = letters[Math.floor(Math.random() * letters.length)];
+    const wordList = Object.values(words[letter]);
+    return wordList[Math.floor(Math.random() * wordList.length)];
+  };
+
+  const handleRandom = () => {
+    setCurrentWord(getRandomWord());
+  };
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -48,10 +65,24 @@ export default function WordPopUpBox({
     >
       <div
         ref={modalRef}
-        className="fixed w-full max-w-screen-md top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 py-4 px-8 bg-champagne rounded-lg z-50"
+        className="fixed w-full max-w-screen-md top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 py-4 px-8 bg-champagne rounded-lg z-50 relative"
         onClick={(e) => e.stopPropagation()}
       >
-        <WordDefinition word={word} />
+        <button
+          onClick={closeModal}
+          aria-label="Close"
+          className="absolute top-2 right-2 text-2xl opacity-60 hover:opacity-100"
+        >
+          <TbX />
+        </button>
+        <WordDefinition word={currentWord} />
+        <button
+          onClick={handleRandom}
+          aria-label="Random word"
+          className="absolute bottom-2 right-2 text-2xl opacity-60 hover:opacity-100"
+        >
+          <TbDice />
+        </button>
       </div>
     </div>
   );
