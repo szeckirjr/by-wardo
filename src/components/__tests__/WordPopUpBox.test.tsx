@@ -1,6 +1,10 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import WordPopUpBox from '../WordPopUpBox';
 import { Word } from '@/types';
+import type { StaticImageData } from 'next/image';
+
+const mockFound = jest.fn(() => <div data-testid="found" />);
+jest.mock('../FoundInBook', () => ({ __esModule: true, default: (props: any) => mockFound(props) }));
 
 const word: Word = {
   word: 'Test',
@@ -9,7 +13,22 @@ const word: Word = {
   definitions: ['definition'],
 };
 
+const refWord: Word = {
+  word: 'Ref',
+  phonetic: '/r/',
+  type: 'noun',
+  definitions: ['d'],
+  reference: {
+    book: { title: 'T', author: 'A', cover: '/c.png' as unknown as StaticImageData },
+    excerpt: <>quote</>,
+  },
+};
+
 describe('WordPopUpBox', () => {
+  afterEach(() => {
+    localStorage.clear();
+    mockFound.mockClear();
+  });
   it('calls closeModal when backdrop clicked or Escape pressed', () => {
     const closeModal = jest.fn();
     render(<WordPopUpBox word={word} closeModal={closeModal} />);
@@ -57,5 +76,21 @@ describe('WordPopUpBox', () => {
     fireEvent.click(backdrop);
     expect(closeModal).not.toHaveBeenCalled();
     (document.getElementById as jest.Mock).mockRestore();
+  });
+
+  it('reads showReference from localStorage', () => {
+    localStorage.setItem('showReference', 'false');
+    render(<WordPopUpBox word={refWord} />);
+    expect(screen.queryByTestId('found')).not.toBeInTheDocument();
+  });
+
+  it('updates localStorage when toggled', async () => {
+    localStorage.setItem('showReference', 'true');
+    render(<WordPopUpBox word={refWord} />);
+    const buttons = screen.getAllByRole('button', { name: 'Random word' });
+    fireEvent.click(buttons[1]);
+    await waitFor(() => {
+      expect(localStorage.getItem('showReference')).toBe('false');
+    });
   });
 });

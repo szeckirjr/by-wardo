@@ -17,7 +17,15 @@ export default function WordPopUpBox({
 }) {
   const modalRef = useRef<HTMLDivElement | null>(null);
   const [currentWord, setCurrentWord] = useState<Word>(word);
-  const [showRefrence, setShowReference] = useState<boolean>(true);
+  const [showRefrence, setShowReference] = useState<boolean>(() => {
+    if (typeof window === "undefined") return true;
+    const stored = localStorage.getItem("showReference");
+    return stored !== null ? stored === "true" : true;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("showReference", String(showRefrence));
+  }, [showRefrence]);
 
   useEffect(() => {
     setCurrentWord(word);
