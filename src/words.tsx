@@ -6,6 +6,7 @@ import changeMindCover from "../public/images/how_to_change_your_mind.png";
 import daisyJonesCover from "../public/images/daisy_jones_and_the_six.png";
 import homoDeusCover from "../public/images/homo_deus.jpg";
 import behaveHumanBiologyCover from "../public/images/behave_biology_of_humans.png";
+import whenBreathBecomesAirCover from "../public/images/when_breath_becomes_air.png";
 
 type BookTitles =
   | "it"
@@ -14,7 +15,8 @@ type BookTitles =
   | "how_to_change_your_mind"
   | "daisy_jones_and_the_six"
   | "homo_deus"
-  | "behave_biology_of_humans";
+  | "behave_biology_of_humans"
+  | "when_breath_becomes_air";
 
 const books: Record<BookTitles, Book> = {
   it: {
@@ -52,33 +54,18 @@ const books: Record<BookTitles, Book> = {
     author: "Robert M. Sapolsky",
     cover: behaveHumanBiologyCover,
   },
+  when_breath_becomes_air: {
+    title: "When Breath Becomes Air",
+    author: "Paul Kalanithi",
+    cover: whenBreathBecomesAirCover,
+  },
 };
 
 const allWords: Record<string, Record<string, Word>> = {
-  // g: {
-  // gook: {
-  //   word: "Gook",
-  //   phonetic: "[/gook/]",
-  //   type: "noun",
-  //   definitions: [
-  //     "A sloppy wet or viscous substance",
-  //     "Also used as a derogatory term for a person of Asian descent",
-  //   ],
-  //   reference: {
-  //     book: books.it,
-  //     excerpt: (
-  //       <>
-  //         The <span className="font-bold">gook</span> in between the two
-  //         boards will take most of the water pressure.
-  //       </>
-  //     ),
-  //   },
-  // },
-  // },
   a: {
     anomalous: {
       word: "Anomalous",
-      phonetic: "TODO:",
+      phonetic: "[/uh-NOM-uh-luhs/]",
       type: "adjective",
       definitions: ["Deviating from what is standard, normal, or expected"],
       reference: {
@@ -95,7 +82,7 @@ const allWords: Record<string, Record<string, Word>> = {
     },
     auspicious: {
       word: "Auspicious",
-      phonetic: "TODO:",
+      phonetic: "[/aw-SPISH-uhs/]",
       type: "adjective",
       definitions: ["Conductive to success", "Favourable, prosperous"],
       reference: {
@@ -107,6 +94,26 @@ const allWords: Record<string, Record<string, Word>> = {
             [...] A little bit folky, very catchy, lots of swagger, big riffs,
             hard drums, and that great Billy Dunne smooth growl. <br /> It was
             an <span className="font-bold">auspicious</span> start.
+          </>
+        ),
+      },
+    },
+    apostasy: {
+      word: "Apostasy",
+      phonetic: "[/uh-POS-tuh-see/]",
+      type: "noun",
+      definitions: [
+        "The abandonment or renunciation of a religious or political belief or principle",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            MRIs for back pain are expensive, and unnecessary imaging had lately
+            become a major national point of cost-saving emphasis. But the value
+            of a scan also depends on what you are looking for: X-rays are
+            largely useless for cancer. Still, for many docs, ordering an MRI at
+            this early stage is <span className="font-bold">apostasy</span>.
           </>
         ),
       },
@@ -123,6 +130,50 @@ const allWords: Record<string, Record<string, Word>> = {
         excerpt: (
           <>
             Oh, <span className="font-bold">cripes</span>!
+          </>
+        ),
+      },
+    },
+    commiserate: {
+      word: "Commiserate",
+      phonetic: "[/kuh-MIZ-uh-reyt/]",
+      type: "verb",
+      definitions: [
+        "To express or feel sympathy or pity; sympathize",
+        "To share in someone's sorrow or disappointment",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            I wanted to tell him that a famous writer,{" "}
+            <span className="font-bold">commiserating</span> about this eternal
+            problem, once said to me, &quot;If I were a neurosurgeon and I
+            announced that I had to leave my guests to go in for an emergency
+            craniotomy, no one would say a word. But if I said I needed to leave
+            the guests in the living room to go upstairs to <i>write...</i>
+            &quot; I wondered if Paul would have found this funny.
+          </>
+        ),
+      },
+    },
+    concomitant: {
+      word: "Concomitant",
+      phonetic: "[/kon-KOM-i-tuhnt/]",
+      type: "adjective, noun",
+      definitions: [
+        "adj. naturally accompanying or associated with something",
+        "n. a phenomenon that naturally accompanies or follows something else",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            It was becoming clear that learning to be a doctor in practice was
+            going to be very different education from being a medical student in
+            the classroom. Reading books and answering multiple-choice questions
+            bore little resemblance to taking action, with its{" "}
+            <span className="font-bold">concomitant</span> responsibility.
           </>
         ),
       },
@@ -147,7 +198,7 @@ const allWords: Record<string, Record<string, Word>> = {
     },
     dote: {
       word: "Dote",
-      phonetic: "TODO:",
+      phonetic: "[/doht/]",
       type: "verb",
       definitions: [
         "To be extremely and uncritically fond of someone",
@@ -161,6 +212,127 @@ const allWords: Record<string, Record<string, Word>> = {
             me every day, pretending he was{" "}
             <span className="font-bold">doting</span> on me but really just
             trying to convince me to get to the studio...
+          </>
+        ),
+      },
+    },
+    dehiscent: {
+      word: "Dehiscent",
+      phonetic: "[/dih-HIS-uhnt/]",
+      type: "adjective (technical)",
+      definitions: ["Opening or bursting along a seam or natural line"],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            Called out of the OR, I stitched the{" "}
+            <span className="font-bold">dehiscent</span> wound as he yelped in
+            pain, telling myself he&apos;d had it coming. <br /> Nobody has it
+            coming.
+          </>
+        ),
+      },
+    },
+    despondency: {
+      word: "Despondency",
+      phonetic: "[/dih-SPON-duhn-see/]",
+      type: "noun",
+      definitions: ["A state of low spirits caused by loss of hope or courage"],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            One evening in my third year, I ran into Jeff, my friend in general
+            surgery, a similarly intense and demanding profession. We each noted
+            the other&apos;s <span className="font-bold">despondency</span>.
+          </>
+        ),
+      },
+    },
+  },
+  e: {
+    epitomize: {
+      word: "Epitomize",
+      phonetic: "[/ih-PIT-uh-mahyz/]",
+      type: "verb",
+      definitions: [
+        "To be a perfect example of something",
+        "Or to give a summary of something",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            Cadaver dissection <span className="font-bold">epitomizes</span>,
+            for many, the transformation of the somber, respectful student into
+            the callous, arrogant doctor.
+            <br />
+            <br />
+            Paul&apos;s decision not to avert his eyes from death{" "}
+            <span className="font-bold">epitomizes</span> a fortitude we
+            don&apos;t celebrate enough in our death-avoidant culture.
+          </>
+        ),
+      },
+    },
+    esoteric: {
+      word: "Esoteric",
+      phonetic: "[/ES-uh-TER-ik/]",
+      type: "adjective",
+      definitions: [
+        "Intended for or likely to be understood by only a small number of people with a specialized knowledge or interest",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            Any major illness transforms a patient&apos;s - really, an entire
+            family&apos;s - life. But brain diseases have the additional
+            strangeness of the <span className="font-bold">esoteric</span>. A
+            son&apos;s death already defies the parents&apos; ordered universe;
+            how much more incromprehensible is it when the patient is
+            brain-dead, his body warm, his heart still beating?
+          </>
+        ),
+      },
+    },
+    expediency: {
+      word: "Expediency",
+      phonetic: "[/ik-SPEED-ee-uhn-see/]",
+      type: "noun",
+      definitions: [
+        "The quality of being convenient and practical despite possibly being improper or immoral",
+        "Convenience or practicality",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            When I mentioned that we&apos;d rather minimize how many embryos
+            were created and destroyed, she looked slightly confused. Most
+            people who came here prized{" "}
+            <span className="font-bold">expedience</span> above all.
+          </>
+        ),
+      },
+    },
+  },
+  g: {
+    gall: {
+      word: "Gall",
+      phonetic: "[/gawl/]",
+      type: "verb",
+      definitions: ["To irritate or annoy someone", "To make sore by rubbing"],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            Even if donors were informed enough - and they might well have been,
+            notwithstanding one anatomy professor&apos;s hedging - it
+            wasn&apos;t so much the thought of being dissected that{" "}
+            <span className="font-bold">galled</span>. It was the thought of
+            your mother, your father, your grandparents being hacked to pieces
+            by wisecracking twent-two-year-old medical students.
           </>
         ),
       },
@@ -228,11 +400,32 @@ const allWords: Record<string, Record<string, Word>> = {
         ),
       },
     },
+    inviolable: {
+      word: "Inviolable",
+      phonetic: "[/in-VAI-uh-luh-buhl/]",
+      type: "adjective",
+      definitions: ["Never to be broken, infringed, or dishonoured"],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            Neurosurgery requires a commitment to one&apos;s own excellence and
+            a commitment to another&apos;s identity. The decision to operate at
+            all involves an appraisal of one&apos;s own abilities, as well as a
+            deep sense of who the patient is and what she holds dear. Certain
+            brain areas are considered near-
+            <span className="font-bold">inviolable</span>, like the primary
+            motor cortex, damage to which results in paralysis of affected body
+            parts.
+          </>
+        ),
+      },
+    },
   },
   j: {
     jibe: {
       word: "Jibe",
-      phonetic: "TODO:",
+      phonetic: "[/JAI-b/]",
       type: "verb",
       definitions: [
         "Make insulting or mocking remarks",
@@ -246,6 +439,44 @@ const allWords: Record<string, Record<string, Word>> = {
             studio to hear us rehearse a lot. There was one day when Daisy and I
             ... we were rehearsing the vocal harmonies and it wasn&apos;t{" "}
             <span className="font-bold">jibing</span>.
+          </>
+        ),
+      },
+    },
+    judicious: {
+      word: "Judicious",
+      phonetic: "[/joo-DISH-uhs/]",
+      type: "adjective",
+      definitions: ["Having, showing, or done with good judgment or sense"],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            Knowing you need to be <span className="font-bold">judicious</span>{" "}
+            when pulling on the head [of a baby] to facilitate delivery of the
+            shoulder is not the same as doing it.
+          </>
+        ),
+      },
+    },
+  },
+  k: {
+    kinship: {
+      word: "Kinship",
+      phonetic: "[/KIN-ship/]",
+      type: "noun",
+      definitions: [
+        "Blood relationship",
+        "A sharing of characteristics or origins",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            I told this story as if to distance myself from it, but my{" "}
+            <span className="font-bold">kinship</span> was undeniable. [...]
+            Even working on the dead, with their faces covered, their names a
+            mystery, you find that their humanity pops up at you...
           </>
         ),
       },
@@ -320,6 +551,81 @@ const allWords: Record<string, Record<string, Word>> = {
         ),
       },
     },
+    prosody: {
+      word: "Prosody",
+      phonetic: "[/PROS-uh-dee/]",
+      type: "noun",
+      definitions: [
+        "The patterns of rhythm and sound used in poetry",
+        "The patterns of stress and intonation in a language",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            The tumor had interrupted his speech circuitry, so he could speak
+            only in streams of numbers, but he still had{" "}
+            <span className="font-bold">prosody</span>, he could still emote:
+            smile, scowl, sigh.
+          </>
+        ),
+      },
+    },
+    peat: {
+      word: "Peat",
+      phonetic: "[/PEET/]",
+      type: "noun",
+      definitions: [
+        "A type of soil that is made up of decayed plant material, found in wetlands",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            The traditional cancer narrative - that one ought to recede, spend
+            time with family, and settle one&apos;s toes in the{" "}
+            <span className="font-bold">peat</span> - was one option.
+          </>
+        ),
+      },
+    },
+    pore: {
+      word: "Pore",
+      phonetic: "[/POHR/]",
+      type: "verb",
+      definitions: ["To be absorbed in reading or studying something"],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            I spent the night prior <span className="font-bold">poring</span>{" "}
+            through surgical textbooks, reviewing the anatomy and steps of the
+            operation.
+          </>
+        ),
+      },
+    },
+  },
+  r: {
+    rote: {
+      word: "Rote",
+      phonetic: "[/ROHT/]",
+      type: "noun",
+      definitions: [
+        "Mechanical or habitual repetition of something to be learned",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            I feared I was on the way to becoming Tolstoy&apos;s stereotype of a
+            doctor, preoccupied with empty formalism, focused on the{" "}
+            <span className="font-bold">rote</span> treatment of disease – and
+            utterly missing the larger human significance.
+          </>
+        ),
+      },
+    },
   },
   s: {
     scallop: {
@@ -346,8 +652,8 @@ const allWords: Record<string, Record<string, Word>> = {
       phonetic: "[/SLOOS/]",
       type: "noun, verb",
       definitions: [
-        "A sliding gate or other device for controlling the flow of water, especially one in a lock gate",
-        "To wash or rinse freely with a stream or shower of water",
+        "n. A sliding gate or other device for controlling the flow of water, especially one in a lock gate",
+        "v. To wash or rinse freely with a stream or shower of water",
       ],
       reference: {
         book: books.it,
@@ -363,36 +669,33 @@ const allWords: Record<string, Record<string, Word>> = {
     },
     stoop: {
       word: "Stoop",
-      phonetic: "TODO:",
-      type: "noun, verb",
+      phonetic: "[/stoop/]",
+      type: "verb, noun",
       definitions: [
-        "The act of bending one's head/body forward and downwards (also the name for the posture it forms)",
-        "A porch with steps in front of a house or building",
+        "v. The act of bending one's head/body forward and downwards (also the name for the posture it forms)",
+        "n. A porch with steps in front of a house or building",
       ],
       reference: {
         book: books.daisy_jones_and_the_six,
         excerpt: (
           <>
-            <p>
-              <span className="font-bold">Daisy:</span> I went back to the
-              Marmont. I&apos;d been crying; I had mascara running down my face.
-              Hank was waiting for me, sitting on my{" "}
-              <span className="font-bold">stoop</span>.
-            </p>
+            <span className="font-bold">Daisy:</span> I went back to the
+            Marmont. I&apos;d been crying; I had mascara running down my face.
+            Hank was waiting for me, sitting on my{" "}
+            <span className="font-bold">stoop</span>.
             <br />
-            <p>
-              <span className="font-bold">Billy:</span> We were all loaded up
-              and the bus driver pulled out of the driveway and Camila had just
-              run down to the front <span className="font-bold">stoop</span> in
-              her nightgown.
-            </p>
+            <br />
+            <span className="font-bold">Billy:</span> We were all loaded up and
+            the bus driver pulled out of the driveway and Camila had just run
+            down to the front <span className="font-bold">stoop</span> in her
+            nightgown.
           </>
         ),
       },
     },
     saccharine: {
       word: "Saccharine",
-      phonetic: "TODO:",
+      phonetic: "[/SAK-uh-ruhn/]",
       type: "adjective",
       definitions: [
         "Excessively sweet or sentimental",
@@ -452,6 +755,90 @@ const allWords: Record<string, Record<string, Word>> = {
             feel <span className="font-bold">schadenfreude</span>, get pleasure
             from his pain, and activate dopaminergic reward pathways. Forget
             &quot;Your pain is my pain.&quot; Your pain is my gain.
+          </>
+        ),
+      },
+    },
+    sinew: {
+      word: "Sinew",
+      phonetic: "[/SIN-oo/]",
+      type: "noun",
+      definitions: [
+        "A piece of tough fibrous tissue uniting muscle to bone; a tendon or ligament",
+        "Parts of a structure, system, or organization that give it strength or bind it together",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            The scalpel is so sharp it doesn&apos;t so much cut the skin as
+            unzip it, revealing the hidden and forbidden{" "}
+            <span className="font-bold">sinew</span> beneath, and despite your
+            preparation, you are caught unawares, ashamed and excited.
+          </>
+        ),
+      },
+    },
+    sojourn: {
+      word: "Sojourn",
+      phonetic: "[/SOH-jurn/]",
+      type: "noun, verb",
+      definitions: ["n. A temporary stay", "v. To stay somewhere temporarily"],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            During my <span className="font-bold">sojourn</span> in ironclad
+            atheism, the primary arsenal leveled against Christinianity had been
+            its failure on empirical grounds.
+          </>
+        ),
+      },
+    },
+  },
+  t: {
+    truculent: {
+      word: "Truculent",
+      phonetic: "[/TRUHK-yuh-luhnt/]",
+      type: "adjective",
+      definitions: ["Eager or quick to argue or fight; aggressively defiant"],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            I rushed through her questions, assured her that surgery would be a
+            success, and assured myself that there wasn&apos;t enough time to
+            answer her questions fairly.{" "}
+            <i>But why didn&apos;t I make the time?</i> A{" "}
+            <span className="font-bold">truculent</span> vet refused the advice
+            and coaxing of doctors, nurses, and physical therapists for weeks;
+            as a result, his back wound broke down, just as we had warned him it
+            would.
+          </>
+        ),
+      },
+    },
+  },
+  u: {
+    undergrid: {
+      word: "Undergrid",
+      phonetic: "[/UHN-der-grid/]",
+      type: "verb",
+      definitions: [
+        "To support or strengthen from below",
+        "To secure or fasten from the underside",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            I had come to see language as an almost supernatural force, existing
+            between people, bringing our brains, shielded in centimeter-thick
+            skulls, into communion. A word meant something only between people,
+            and life&apos;s meaning, its virtue, had something to do with the
+            depth of the relationships we form. It was the relational aspect of
+            humans – i.e., &quot;human relationality&apos; – that{" "}
+            <span className="font-bold">undergrided</span> meaning.
           </>
         ),
       },
