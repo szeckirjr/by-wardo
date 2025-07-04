@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import WordDefinition from '../WordDefinition';
 import { Word } from '@/types';
+import type { StaticImageData } from 'next/image';
 
 const mockFound = jest.fn(() => <div data-testid="found" />);
 jest.mock('../FoundInBook', () => ({ __esModule: true, default: (props: any) => mockFound(props) }));
@@ -24,7 +25,7 @@ describe('WordDefinition additional', () => {
       type: 'noun',
       definitions: ['d'],
       reference: {
-        book: { title: 'T', author: 'A', cover: '/c.png' },
+        book: { title: 'T', author: 'A', cover: '/c.png' as unknown as StaticImageData },
         excerpt: <>quote</>,
       },
     };

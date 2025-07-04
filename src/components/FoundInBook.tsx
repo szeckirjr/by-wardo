@@ -22,6 +22,8 @@ export default function FoundInBook({ reference }: { reference: Reference }) {
           <Image
             src={cover}
             alt={title}
+            placeholder="blur"
+            priority
             fill
             style={{ objectFit: "contain" }}
           />

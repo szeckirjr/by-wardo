@@ -1,7 +1,9 @@
+import { StaticImageData } from "next/image";
+
 export type Book = {
   title: string;
   author: string;
-  cover: string;
+  cover: StaticImageData;
 };
 
 export interface Reference {
