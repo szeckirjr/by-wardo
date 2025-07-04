@@ -12,6 +12,7 @@ type Props = {
 
 export default function WordDefinition({ word, showReference }: Props) {
   if (!word) return null;
+  const show = showReference ?? true;
   const {
     word: wordLabel,
     phonetic,
@@ -46,7 +47,7 @@ export default function WordDefinition({ word, showReference }: Props) {
               </p>
             ))}
       </div>
-      {showReference && word.reference && (
+      {show && word.reference && (
         <FoundInBook reference={word.reference} />
       )}
     </div>

@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import WordPopUpBox from '../WordPopUpBox';
 import { Word } from '@/types';
 
@@ -13,7 +13,7 @@ describe('WordPopUpBox', () => {
   it('calls closeModal when backdrop clicked or Escape pressed', () => {
     const closeModal = jest.fn();
     render(<WordPopUpBox word={word} closeModal={closeModal} />);
-    const backdrop = document.getElementById('modal-backdrop')!;
+    const backdrop = screen.getByTestId('modal-backdrop');
     fireEvent.click(backdrop);
     expect(closeModal).toHaveBeenCalledTimes(1);
     fireEvent.keyDown(document, { key: 'Escape' });
@@ -38,7 +38,7 @@ describe('WordPopUpBox', () => {
   it('works safely without closeModal handler', () => {
     expect(() => {
       render(<WordPopUpBox word={word} />);
-      const backdrop = document.getElementById('modal-backdrop')!;
+      const backdrop = screen.getByTestId('modal-backdrop');
       fireEvent.click(backdrop);
       fireEvent.keyDown(document, { key: 'Escape' });
     }).not.toThrow();
@@ -53,7 +53,7 @@ describe('WordPopUpBox', () => {
         id === 'modal-backdrop' ? null : original(id)
       );
     render(<WordPopUpBox word={word} closeModal={closeModal} />);
-    const backdrop = document.querySelector('#modal-backdrop') as HTMLElement;
+    const backdrop = screen.getByTestId('modal-backdrop');
     fireEvent.click(backdrop);
     expect(closeModal).not.toHaveBeenCalled();
     (document.getElementById as jest.Mock).mockRestore();

@@ -6,7 +6,10 @@ import { wordEntries } from "@/words";
 import classNames from "classnames";
 import { vidaloka } from "@/fonts";
 import Link from "next/link";
-import WordPopUpBox from "@/components/WordPopUpBox";
+import dynamic from "next/dynamic";
+const WordPopUpBox = dynamic(() => import("@/components/WordPopUpBox"), {
+  ssr: false,
+});
 import { Word } from "@/types";
 import { TbExternalLink } from "react-icons/tb";
 
