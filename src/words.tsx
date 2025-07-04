@@ -1,4 +1,10 @@
 import { Book, Word } from "./types";
+import itCover from "../public/images/it.png";
+import aLittleLifeCover from "../public/images/a_little_life.jpg";
+import antimemeticsCover from "../public/images/there_is_no_antimemetics_division.png";
+import changeMindCover from "../public/images/how_to_change_your_mind.png";
+import daisyJonesCover from "../public/images/daisy_jones_and_the_six.png";
+import homoDeusCover from "../public/images/homo_deus.jpg";
 
 type BookTitles =
   | "it"
@@ -12,32 +18,32 @@ const books: Record<BookTitles, Book> = {
   it: {
     title: "It",
     author: "Stephen King",
-    cover: "/images/it.png",
+    cover: itCover,
   },
   a_little_life: {
     title: "A Little Life",
     author: "Hanya Yanagihara",
-    cover: "/images/a_little_life.jpg",
+    cover: aLittleLifeCover,
   },
   there_is_no_antimemetics_division: {
     title: "There Is No Antimemetics Division",
     author: "qntm",
-    cover: "/images/there_is_no_antimemetics_division.png",
+    cover: antimemeticsCover,
   },
   how_to_change_your_mind: {
     title: "How to Change Your Mind",
     author: "Michael Pollan",
-    cover: "/images/how_to_change_your_mind.png",
+    cover: changeMindCover,
   },
   daisy_jones_and_the_six: {
     title: "Daisy Jones & the Six: A Novel",
     author: "Taylor Jenkins Reid",
-    cover: "/images/daisy_jones_and_the_six.png",
+    cover: daisyJonesCover,
   },
   homo_deus: {
     title: "Homo Deus: A Brief History of Tomorrow",
     author: "Yuval Noah Harari",
-    cover: "/images/homo_deus.jpg",
+    cover: homoDeusCover,
   },
 };
 

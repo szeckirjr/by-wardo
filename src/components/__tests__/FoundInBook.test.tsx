@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import type { StaticImageData } from 'next/image';
 import FoundInBook from '../FoundInBook';
 
 jest.mock('next/image', () => ({
@@ -9,7 +10,7 @@ jest.mock('next/image', () => ({
 describe('FoundInBook', () => {
   it('shows book info and excerpt', () => {
     const reference = {
-      book: { title: 'Title', author: 'Auth', cover: '/img.png' },
+      book: { title: 'Title', author: 'Auth', cover: '/img.png' as unknown as StaticImageData },
       excerpt: <>Quote</>,
     };
     render(<FoundInBook reference={reference} />);
