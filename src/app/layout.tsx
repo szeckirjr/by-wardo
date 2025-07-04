@@ -54,7 +54,7 @@ export default function RootLayout({
     <html lang="en" className="bg-champagne">
       <body
         className={classNames(
-          "bg-fuzz_tinted text-rich-black relative min-h-screen w-full max-h-screen flex flex-col bg-blend-multiply",
+          "bg-fuzz_tinted text-rich-black relative min-h-screen w-full flex flex-col bg-blend-multiply",
           inter.className
         )}
       >
