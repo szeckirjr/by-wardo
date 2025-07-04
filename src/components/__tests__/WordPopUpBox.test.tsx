@@ -78,12 +78,10 @@ describe('WordPopUpBox', () => {
     (document.getElementById as jest.Mock).mockRestore();
   });
 
-  it('reads showReference from localStorage', async () => {
+  it('reads showReference from localStorage', () => {
     localStorage.setItem('showReference', 'false');
     render(<WordPopUpBox word={refWord} />);
-    await waitFor(() => {
-      expect(screen.queryByTestId('found')).not.toBeInTheDocument();
-    });
+    expect(screen.queryByTestId('found')).not.toBeInTheDocument();
   });
 
   it('updates localStorage when toggled', async () => {
