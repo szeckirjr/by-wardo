@@ -20,6 +20,17 @@ export default function WordPopUpBox({
   const [showRefrence, setShowReference] = useState<boolean>(true);
 
   useEffect(() => {
+    const stored = localStorage.getItem("showReference");
+    if (stored !== null) {
+      setShowReference(stored === "true");
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("showReference", String(showRefrence));
+  }, [showRefrence]);
+
+  useEffect(() => {
     setCurrentWord(word);
   }, [word]);
 
