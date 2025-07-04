@@ -483,8 +483,14 @@ const allWords: Record<string, Record<string, Word>> = {
 // and words sorted alphabetically
 export const words = Object.keys(allWords)
   .sort()
-  .reduce((acc, key) => {
-    acc[key] = allWords[key];
+  .reduce((acc, letter) => {
+    const sortedWords = Object.keys(allWords[letter])
+      .sort()
+      .reduce((letterAcc, wordKey) => {
+        letterAcc[wordKey] = allWords[letter][wordKey];
+        return letterAcc;
+      }, {} as Record<string, Word>);
+    acc[letter] = sortedWords;
     return acc;
   }, {} as Record<string, Record<string, Word>>);
 
