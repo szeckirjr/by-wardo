@@ -9,16 +9,16 @@ type Props = {
   placeholder?: string;
 };
 
-export default function SearchBar({ query, setQuery, placeholder = "Search" }: Props) {
+export default function SearchBar({ query, setQuery }: Props) {
   return (
     <input
       type="text"
       value={query}
       onChange={(e) => setQuery(e.target.value)}
-      placeholder={placeholder}
+      placeholder={"Search words..."}
       aria-label="Search words"
       className={classNames(
-        "w-full border-b border-neutral-300 px-2 py-1 text-lg bg-transparent focus:outline-none",
+        "w-full border-b border-neutral-300 px-2 py-1 text-6xl bg-transparent focus:outline-none",
         vidaloka.className
       )}
     />

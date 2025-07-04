@@ -23,10 +23,10 @@ export default function SearchPage() {
 
   return (
     <div className="flex flex-col gap-8 w-full max-w-screen-lg mx-auto items-end">
-      <div className="w-full md:w-80 self-stretch md:self-end">
+      <div className="w-full self-stretch">
         <SearchBar query={query} setQuery={setQuery} />
       </div>
-      <ul className="flex flex-col items-end gap-6 w-full">
+      <ul className="flex flex-col items-start gap-6 w-full">
         {filtered.map(({ letter, slug, word }) => (
           <li key={`${letter}-${slug}`} className="transition-all">
             <h2
@@ -51,7 +51,10 @@ export default function SearchPage() {
                 </button>
               )}
               {popUpWord === word ? (
-                <WordPopUpBox word={word} closeModal={() => setPopUpWord(null)} />
+                <WordPopUpBox
+                  word={word}
+                  closeModal={() => setPopUpWord(null)}
+                />
               ) : null}
             </h2>
           </li>
