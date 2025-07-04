@@ -29,7 +29,7 @@ describe('WordDefinition additional', () => {
         excerpt: <>quote</>,
       },
     };
-    render(<WordDefinition word={word} />);
+    render(<WordDefinition word={word} showReference />);
     expect(mockFound).toHaveBeenCalledWith({ reference: word.reference });
   });
 });
