@@ -20,7 +20,7 @@ export default function FoundInBook({ reference }: { reference: Reference }) {
             src={cover}
             alt={title}
             placeholder="blur"
-            priority
+            loading="lazy"
             fill
             style={{ objectFit: "contain" }}
           />

@@ -71,6 +71,7 @@ export default function WordPopUpBox({
   return (
     <div
       id="modal-backdrop"
+      data-testid="modal-backdrop"
       className="fixed inset-0 bg-black bg-opacity-20 z-40 backdrop-blur-sm"
       onClick={(e) => e.stopPropagation()}
     >

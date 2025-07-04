@@ -3,7 +3,10 @@
 import { words } from "@/words";
 import classNames from "classnames";
 import { vidaloka } from "@/fonts";
-import WordPopUpBox from "../WordPopUpBox";
+import dynamic from "next/dynamic";
+const WordPopUpBox = dynamic(() => import("../WordPopUpBox"), {
+  ssr: false,
+});
 import { useState } from "react";
 import { Word } from "@/types";
 import Link from "next/link";
