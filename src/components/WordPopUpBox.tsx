@@ -1,7 +1,8 @@
 "use client";
 
 import { Word } from "@/types";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import classNames from "classnames";
 import { words, letters } from "@/words";
 import { TbX } from "react-icons/tb";
 import { GiRollingDices } from "react-icons/gi";
@@ -16,9 +17,11 @@ export default function WordPopUpBox({
 }) {
   const modalRef = useRef<HTMLDivElement | null>(null);
   const [currentWord, setCurrentWord] = useState<Word>(word);
+  const [closing, setClosing] = useState(false);
 
   useEffect(() => {
     setCurrentWord(word);
+    setClosing(false);
   }, [word]);
 
   const getRandomWord = () => {
@@ -31,16 +34,23 @@ export default function WordPopUpBox({
     setCurrentWord(getRandomWord());
   };
 
+  const closeWithAnimation = useCallback(() => {
+    setClosing(true);
+    setTimeout(() => {
+      closeModal?.();
+    }, 500);
+  }, [closeModal]);
+
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
       if (event.target === event.currentTarget) {
-        closeModal?.();
+        closeWithAnimation();
       }
     };
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        closeModal?.();
+        closeWithAnimation();
       }
     };
 
@@ -56,21 +66,26 @@ export default function WordPopUpBox({
       }
       document.removeEventListener("keydown", handleEscape);
     };
-  }, [closeModal]);
+  }, [closeWithAnimation]);
 
   return (
     <div
       id="modal-backdrop"
       className="fixed inset-0 bg-black bg-opacity-20 z-40"
+      style={{ perspective: "1000px" }}
       onClick={(e) => e.stopPropagation()}
     >
       <div
         ref={modalRef}
-        className="w-full overflow-y-auto max-w-screen-md max-h-[85vh] top-[10%] left-1/2 transform -translate-x-1/2 py-4 px-8 bg-champagne rounded-lg z-50 fixed"
+        className={classNames(
+          "w-full overflow-y-auto max-w-screen-md max-h-[85vh] top-[10%] left-1/2 transform -translate-x-1/2 py-4 px-8 bg-champagne rounded-lg z-50 fixed",
+          closing ? "animate-card-out" : "animate-card-in"
+        )}
+        style={{ transformStyle: "preserve-3d" }}
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          onClick={closeModal}
+          onClick={closeWithAnimation}
           aria-label="Close"
           className="absolute top-4 right-4 text-2xl opacity-60 hover:opacity-100"
         >

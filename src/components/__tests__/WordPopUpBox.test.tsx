@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import WordPopUpBox from '../WordPopUpBox';
 import { Word } from '@/types';
 
@@ -10,14 +10,18 @@ const word: Word = {
 };
 
 describe('WordPopUpBox', () => {
-  it('calls closeModal when backdrop clicked or Escape pressed', () => {
+  it('calls closeModal when backdrop clicked or Escape pressed', async () => {
+    jest.useFakeTimers();
     const closeModal = jest.fn();
     render(<WordPopUpBox word={word} closeModal={closeModal} />);
     const backdrop = document.getElementById('modal-backdrop')!;
     fireEvent.click(backdrop);
-    expect(closeModal).toHaveBeenCalledTimes(1);
+    jest.runAllTimers();
+    await waitFor(() => expect(closeModal).toHaveBeenCalledTimes(1));
     fireEvent.keyDown(document, { key: 'Escape' });
-    expect(closeModal).toHaveBeenCalledTimes(2);
+    jest.runAllTimers();
+    await waitFor(() => expect(closeModal).toHaveBeenCalledTimes(2));
+    jest.useRealTimers();
   });
 
   it('ignores keydown events other than Escape', () => {
