@@ -495,3 +495,11 @@ export const words = Object.keys(allWords)
   }, {} as Record<string, Record<string, Word>>);
 
 export const letters = Object.keys(words);
+
+export const wordEntries = Object.keys(words).flatMap((letter) =>
+  Object.keys(words[letter]).map((slug) => ({
+    letter,
+    slug,
+    word: words[letter][slug],
+  }))
+);

@@ -15,6 +15,13 @@ describe('Header', () => {
     expect(link).toHaveAttribute('href', '/');
   });
 
+  it('has search icon link', () => {
+    usePathname.mockReturnValue('/');
+    render(<Header />);
+    const link = screen.getByRole('link', { name: /search/i });
+    expect(link).toHaveAttribute('href', '/search');
+  });
+
   it('uses small title on non-root pages', () => {
     usePathname.mockReturnValue('/about');
     render(<Header />);

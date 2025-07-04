@@ -2,6 +2,7 @@
 import classNames from "classnames";
 import { vidaloka } from "@/fonts";
 import { usePathname } from "next/navigation";
+import { TbSearch } from "react-icons/tb";
 
 // Local font defined in src/fonts.ts
 
@@ -30,6 +31,9 @@ export default function Header() {
           Words
         </a>
       </h1>
+      <a href="/search" aria-label="Search" className="text-3xl md:text-4xl hover:opacity-80">
+        <TbSearch />
+      </a>
       {/* TODO: Implement language toggle for Portuguese/English */}
       {/* <FlagToggle /> */}
     </div>
