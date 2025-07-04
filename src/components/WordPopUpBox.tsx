@@ -89,6 +89,7 @@ export default function WordPopUpBox({
           <GiRollingDices
             className="opacity-60 group-hover:opacity-80 "
             size={36}
+            color="black"
           />
         </button>
         <button
@@ -108,6 +109,7 @@ export default function WordPopUpBox({
               "group-hover:opacity-80": !showRefrence,
             })}
             size={36}
+            color="black"
           />
         </button>
       </div>
