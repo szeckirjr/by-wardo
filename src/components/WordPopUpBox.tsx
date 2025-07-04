@@ -104,9 +104,9 @@ export default function WordPopUpBox({
           )}
         >
           <GiBookmarklet
-            className={classNames("opacity-60 pt-1", {
+            className={classNames("pt-1", {
               "opacity-100": showRefrence,
-              "group-hover:opacity-80": !showRefrence,
+              "opacity-60 group-hover:opacity-80": !showRefrence,
             })}
             size={36}
             color="black"
