@@ -51,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-champagne">
       <body
         className={classNames(
           "bg-fuzz_tinted text-rich-black relative min-h-screen w-full max-h-screen flex flex-col bg-blend-multiply",
