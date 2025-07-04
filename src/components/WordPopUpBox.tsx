@@ -3,7 +3,8 @@
 import { Word } from "@/types";
 import { useEffect, useRef, useState } from "react";
 import { words, letters } from "@/words";
-import { TbX, TbDice } from "react-icons/tb";
+import { TbX } from "react-icons/tb";
+import { GiRollingDices } from "react-icons/gi";
 import WordDefinition from "./WordDefinition";
 
 export default function WordPopUpBox({
@@ -71,7 +72,7 @@ export default function WordPopUpBox({
         <button
           onClick={closeModal}
           aria-label="Close"
-          className="absolute top-2 right-2 text-2xl opacity-60 hover:opacity-100"
+          className="absolute top-4 right-4 text-2xl opacity-60 hover:opacity-100"
         >
           <TbX />
         </button>
@@ -79,9 +80,9 @@ export default function WordPopUpBox({
         <button
           onClick={handleRandom}
           aria-label="Random word"
-          className="absolute bottom-2 right-2 text-2xl opacity-60 hover:opacity-100"
+          className="absolute bottom-4 right-4 text-2xl opacity-60 hover:opacity-100"
         >
-          <TbDice />
+          <GiRollingDices size={48} />
         </button>
       </div>
     </div>
