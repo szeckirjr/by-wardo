@@ -66,7 +66,7 @@ export default function WordPopUpBox({
     >
       <div
         ref={modalRef}
-        className="fixed w-full max-w-screen-md top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 py-4 px-8 bg-champagne rounded-lg z-50 relative"
+        className="w-full overflow-y-auto max-w-screen-md max-h-[85vh] top-[10%] left-1/2 transform -translate-x-1/2 py-4 px-8 bg-champagne rounded-lg z-50 fixed"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -74,15 +74,15 @@ export default function WordPopUpBox({
           aria-label="Close"
           className="absolute top-4 right-4 text-2xl opacity-60 hover:opacity-100"
         >
-          <TbX />
+          <TbX size={28} />
         </button>
         <WordDefinition word={currentWord} />
         <button
           onClick={handleRandom}
           aria-label="Random word"
-          className="absolute bottom-4 right-4 text-2xl opacity-60 hover:opacity-100"
+          className="absolute top-4 right-12 text-2xl opacity-60 hover:opacity-100"
         >
-          <GiRollingDices size={48} />
+          <GiRollingDices size={42} />
         </button>
       </div>
     </div>
