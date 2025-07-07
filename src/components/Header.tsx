@@ -28,7 +28,7 @@ export default function Header() {
         })}
       >
         <a href="/" className="hover:underline">
-          Words
+          Words by Wardo
         </a>
       </h1>
       <a href="/search" aria-label="Search" className="text-3xl md:text-4xl hover:opacity-80">
