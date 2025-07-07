@@ -8,7 +8,7 @@ jest.mock('lottie-react', () => {
   const React = require('react');
   return {
     __esModule: true,
-    default: React.forwardRef((_props, ref) => {
+    default: React.forwardRef((_: unknown, ref: React.Ref<any>) => {
       React.useImperativeHandle(ref, () => ({
         play: jest.fn(),
         stop: jest.fn(),
