@@ -87,8 +87,8 @@ describe('WordPopUpBox', () => {
   it('updates localStorage when toggled', async () => {
     localStorage.setItem('showReference', 'true');
     render(<WordPopUpBox word={refWord} />);
-    const buttons = screen.getAllByRole('button', { name: 'Random word' });
-    fireEvent.click(buttons[1]);
+    const toggle = screen.getByRole('button', { name: 'Toggle reference' });
+    fireEvent.click(toggle);
     await waitFor(() => {
       expect(localStorage.getItem('showReference')).toBe('false');
     });
