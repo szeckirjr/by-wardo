@@ -4,7 +4,9 @@ import { Word } from "@/types";
 import { useEffect, useRef, useState } from "react";
 import { words, letters } from "@/words";
 import { TbX } from "react-icons/tb";
-import { GiBookmarklet, GiRollingDices } from "react-icons/gi";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import bookAnimation from "../../public/lottie/book-toggle.json";
+import diceAnimation from "../../public/lottie/dice-roll.json";
 import WordDefinition from "./WordDefinition";
 import classNames from "classnames";
 
@@ -16,20 +18,28 @@ export default function WordPopUpBox({
   closeModal?: () => void;
 }) {
   const modalRef = useRef<HTMLDivElement | null>(null);
+  const diceRef = useRef<LottieRefCurrentProps | null>(null);
+  const bookRef = useRef<LottieRefCurrentProps | null>(null);
   const [currentWord, setCurrentWord] = useState<Word>(word);
-  const [showRefrence, setShowReference] = useState<boolean>(() => {
+  const [showReference, setShowReference] = useState<boolean>(() => {
     if (typeof window === "undefined") return true;
     const stored = localStorage.getItem("showReference");
     return stored !== null ? stored === "true" : true;
   });
 
   useEffect(() => {
-    localStorage.setItem("showReference", String(showRefrence));
-  }, [showRefrence]);
+    localStorage.setItem("showReference", String(showReference));
+  }, [showReference]);
 
   useEffect(() => {
     setCurrentWord(word);
   }, [word]);
+
+  useEffect(() => {
+    if (bookRef.current) {
+      bookRef.current.playSegments(showReference ? [0, 15] : [15, 0], true);
+    }
+  }, [showReference]);
 
   const getRandomWord = () => {
     const letter = letters[Math.floor(Math.random() * letters.length)];
@@ -88,37 +98,44 @@ export default function WordPopUpBox({
           >
             <TbX size={28} />
           </button>
-          <WordDefinition word={currentWord} showReference={showRefrence} />
+          <WordDefinition word={currentWord} showReference={showReference} />
         </div>
         <button
-          onClick={handleRandom}
+          onClick={() => {
+            handleRandom();
+            diceRef.current?.playSegments([0, 20], true);
+          }}
           aria-label="Random word"
           className="absolute -top-16 right-16 lg:top-16 lg:-right-16 text-2xl group z-[55] bg-champagne rounded-full p-2 border border-[#6e6a65] shadow-md"
         >
-          <GiRollingDices
-            className="opacity-60 group-hover:opacity-80 "
-            size={36}
-            color="black"
+          <Lottie
+            lottieRef={diceRef}
+            animationData={diceAnimation}
+            loop={false}
+            autoplay={false}
+            className="w-9 h-9 opacity-60 group-hover:opacity-80"
           />
         </button>
         <button
-          onClick={() => setShowReference(!showRefrence)}
-          aria-label="Random word"
+          onClick={() => setShowReference(!showReference)}
+          aria-label="Toggle reference"
           className={classNames(
             "absolute -top-16 right-1 lg:top-1 lg:-right-16 text-2xl group z-[55] bg-champagne rounded-full p-2 border shadow-md",
             {
-              "border-[#6e6a65]": !showRefrence,
-              "border-black": showRefrence,
+              "border-[#6e6a65]": !showReference,
+              "border-black": showReference,
             }
           )}
         >
-          <GiBookmarklet
-            className={classNames("pt-1", {
-              "opacity-100": showRefrence,
-              "opacity-60 group-hover:opacity-80": !showRefrence,
+          <Lottie
+            lottieRef={bookRef}
+            animationData={bookAnimation}
+            loop={false}
+            autoplay={false}
+            className={classNames("w-9 h-9", {
+              "opacity-100": showReference,
+              "opacity-60 group-hover:opacity-80": !showReference,
             })}
-            size={36}
-            color="black"
           />
         </button>
       </div>
