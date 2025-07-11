@@ -4,7 +4,9 @@ import { Word } from "@/types";
 import { useEffect, useRef, useState } from "react";
 import { words, letters } from "@/words";
 import { TbX } from "react-icons/tb";
-import { GiBookmarklet, GiRollingDices } from "react-icons/gi";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import diceAnimation from "@/../public/dice6.json";
+import bookAnimation from "@/../public/book.json";
 import WordDefinition from "./WordDefinition";
 import classNames from "classnames";
 
@@ -37,8 +39,23 @@ export default function WordPopUpBox({
     return wordList[Math.floor(Math.random() * wordList.length)];
   };
 
+  const diceLottieRef = useRef<LottieRefCurrentProps | null>(null);
+  const bookLottieRef = useRef<LottieRefCurrentProps | null>(null);
+
   const handleRandom = () => {
+    diceLottieRef.current?.goToAndPlay(0, true);
     setCurrentWord(getRandomWord());
+  };
+
+  const handleToggleReference = () => {
+    setShowReference((prev) => !prev);
+    if (showRefrence) {
+      bookLottieRef.current?.setDirection(1);
+      bookLottieRef.current?.goToAndPlay(0, true);
+    } else {
+      bookLottieRef.current?.setDirection(-1);
+      bookLottieRef.current?.goToAndPlay(104, true);
+    }
   };
 
   useEffect(() => {
@@ -68,6 +85,24 @@ export default function WordPopUpBox({
     };
   }, [closeModal]);
 
+  useEffect(() => {
+    if (diceLottieRef.current) {
+      diceLottieRef.current.goToAndStop(178, true);
+      diceLottieRef.current.setSpeed(2);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (bookLottieRef.current) {
+      if (showRefrence) {
+        bookLottieRef.current.goToAndStop(0, true);
+      } else {
+        bookLottieRef.current.goToAndStop(104, true);
+      }
+      bookLottieRef.current.setSpeed(2);
+    }
+  }, []);
+
   return (
     <div
       id="modal-backdrop"
@@ -93,32 +128,48 @@ export default function WordPopUpBox({
         <button
           onClick={handleRandom}
           aria-label="Random word"
-          className="absolute -top-16 right-16 lg:top-16 lg:-right-16 text-2xl group z-[55] bg-champagne rounded-full p-2 border border-[#6e6a65] shadow-md"
+          className="absolute -top-16 right-16 lg:top-[70px] lg:-right-16 text-2xl group z-[55] bg-champagne rounded-full p-1 border border-[#6e6a65] hover:border-[#524f4c] shadow-md"
         >
-          <GiRollingDices
+          {/* <GiRollingDices
             className="opacity-60 group-hover:opacity-80 "
             size={36}
             color="black"
+          /> */}
+          <Lottie
+            lottieRef={diceLottieRef}
+            animationData={diceAnimation}
+            loop={false}
+            className="w-12 h-12 group-hover:scale-110 transition-transform duration-200"
+            // initialSegment={[0, 180]}
+            onComplete={() => diceLottieRef.current?.goToAndStop(178, true)}
           />
         </button>
         <button
-          onClick={() => setShowReference(!showRefrence)}
+          onClick={handleToggleReference}
           aria-label="Random word"
           className={classNames(
-            "absolute -top-16 right-1 lg:top-1 lg:-right-16 text-2xl group z-[55] bg-champagne rounded-full p-2 border shadow-md",
+            "absolute -top-16 right-1 lg:top-1 lg:-right-16 text-2xl group z-[55] bg-champagne rounded-full p-1 border shadow-md",
             {
               "border-[#6e6a65]": !showRefrence,
               "border-black": showRefrence,
             }
           )}
         >
-          <GiBookmarklet
+          {/* <GiBookmarklet
             className={classNames("pt-1", {
               "opacity-100": showRefrence,
               "opacity-60 group-hover:opacity-80": !showRefrence,
             })}
-            size={36}
+            size={48}
             color="black"
+          /> */}
+          <Lottie
+            lottieRef={bookLottieRef}
+            animationData={bookAnimation}
+            loop={false}
+            className="w-12 h-12 scale-x-[-1]"
+            initialSegment={[1, 105]}
+            // onComplete={() => bookLottieRef.current?.goToAndStop(60, true)}
           />
         </button>
       </div>
