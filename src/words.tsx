@@ -118,6 +118,52 @@ const allWords: Record<string, Record<string, Word>> = {
         ),
       },
     },
+    acuity: {
+      word: "Acuity",
+      phonetic: "[/uh-KYOO-i-tee/]",
+      type: "noun",
+      definitions: [
+        "Sharpness or keenness of thought, vision, or hearing",
+        "The ability to think clearly and quickly",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            Although Paul accepted his limited life expectancy, neurologic
+            decline was a new devastation, the prospect of losing meaning and
+            agency agonizing. We strategized with Paul&apos;s oncologist about
+            his top priority: preserving mental{" "}
+            <span className="font-bold">acuity</span> as long as possible.
+          </>
+        ),
+      },
+    },
+  },
+  b: {
+    belie: {
+      word: "Belie",
+      phonetic: "[/bih-LAI/]",
+      type: "verb",
+      definitions: [
+        "To contradict or show something to be false",
+        "Fail to fulfill or justify a claim or expectation",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            The only real atheism must be grounded in a world-making vision. The
+            favorite quote of many an atheist, from the Nobel Prize-winning
+            French biologist Jacques Monod,{" "}
+            <span className="font-bold">belies</span> this revelatory aspect:
+            &quot;The ancient covenant is in pieces; man at last knows that he
+            is alone in the universe, out of which he emerged only by
+            chance.&quot; (i.e. rejects meaning without offering a replacement)
+          </>
+        ),
+      },
+    },
   },
   c: {
     cripes: {
@@ -180,6 +226,35 @@ const allWords: Record<string, Record<string, Word>> = {
     },
   },
   d: {
+    dynamism: {
+      word: "Dynamism",
+      phonetic: "[/DAI-nuh-miz-uhm/]",
+      type: "noun",
+      definitions: [
+        "The quality of being characterized by vigorous activity and progress",
+        "Being dynamic and positive in one's attitude",
+        "(Philosophy) The theory that everything is the result of a force or energy rather than to motion or matter",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            The cancer cells in my body would still be dying, or they&apos;d
+            start growing again. Looking out over the expanse ahead I saw not an
+            empty wasteland but something simpler: a blank page on which I would
+            go on.
+            <br />
+            <br />
+            Yet there is <span className="font-bold">dynamism</span> in our
+            house.
+            <br />
+            Day to day, week to week, Cady blossoms: a first grasp, a first
+            smile, a first laugh. Her pediatrician regularly records her growth
+            on charts, tick marks indicating her progress over time.
+          </>
+        ),
+      },
+    },
     deportment: {
       word: "Deportment",
       phonetic: "[/dih-PORT-muhnt/]",
@@ -839,6 +914,24 @@ const allWords: Record<string, Record<string, Word>> = {
             depth of the relationships we form. It was the relational aspect of
             humans – i.e., &quot;human relationality&apos; – that{" "}
             <span className="font-bold">undergrided</span> meaning.
+          </>
+        ),
+      },
+    },
+    unremitting: {
+      word: "Unremitting",
+      phonetic: "[/UHN-ruh-MIT-ing/]",
+      type: "adjective",
+      definitions: [
+        "Never relaxing or slackening; incessant",
+        "Not stopping or slowing down",
+      ],
+      reference: {
+        book: books.when_breath_becomes_air,
+        excerpt: (
+          <>
+            Bedtime crept earlier, Paul&apos;s voice slurred intermittently, and
+            his nausea became <span className="font-bold">unremitting</span>.
           </>
         ),
       },
