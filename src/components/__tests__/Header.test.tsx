@@ -11,7 +11,7 @@ describe('Header', () => {
   it('shows main title link', () => {
     usePathname.mockReturnValue('/');
     render(<Header />);
-    const link = screen.getByRole('link', { name: /words/i });
+    const link = screen.getByRole('link', { name: /words by wardo/i });
     expect(link).toHaveAttribute('href', '/');
   });
 
@@ -25,7 +25,7 @@ describe('Header', () => {
   it('uses small title on non-root pages', () => {
     usePathname.mockReturnValue('/about');
     render(<Header />);
-    const heading = screen.getByRole('heading', { name: /words/i });
+    const heading = screen.getByRole('heading', { name: /words by wardo/i });
     expect(heading.className).toMatch(/text-4xl/);
   });
 });
